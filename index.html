@@ -1,0 +1,437 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>دروسي في التقنية الرقمية</title>
+<style>
+:root{--paper:#FBF6F9;--card:#fff;--ink:#1E2142;--muted:#5D5F7A;--line:#EADCE4;--berry:#C92A68;--berry-soft:#FBE3ED}
+html,body{height:100%;margin:0}
+body{background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif;line-height:1.7;direction:rtl}
+.home{max-width:60rem;margin:0 auto;padding:2rem 16px;display:flex;flex-direction:column;gap:1.3rem}
+h1,h2,h3{font-family:"El Messiri",serif;margin:0;line-height:1.3}
+h1{font-size:clamp(1.8rem,5vw,2.8rem)} h2{color:var(--berry);font-size:1.3rem}
+.sub{color:var(--muted)}
+.lesson{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.8rem}
+.meta{font-size:.85rem;color:var(--muted)}
+.pers{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}
+.per{font:inherit;text-align:start;cursor:pointer;display:flex;flex-direction:column;gap:.15rem;background:var(--berry-soft);border:2px solid transparent;border-radius:12px;padding:.7rem .9rem;color:var(--ink)}
+.per:hover,.per:focus-visible{border-color:var(--berry);outline:none}
+.per b{font-family:"El Messiri",serif;font-size:1.1rem;color:var(--berry)} .per span{font-size:.85rem;color:var(--muted)}
+.view{position:fixed;inset:0;display:none;flex-direction:column;background:var(--paper)}
+.view.on{display:flex}
+.back{font:inherit;cursor:pointer;border:0;background:var(--ink);color:#fff;padding:.35rem 1rem;border-radius:0 0 0 12px;align-self:flex-start;font-size:.85rem}
+iframe{flex:1;border:0;width:100%}
+</style></head><body>
+<div class="home">
+<header><h1>دروسي في التقنية الرقمية</h1><p class="sub">تقنية رقمية 1-1 • يعمل في أي متصفح، بلا تسجيل دخول وبلا صوت</p></header>
+<h2>الوحدة الأولى: أساسيات علم الحاسب</h2>
+<article class="lesson"><h3>الدرس الخامس: تقنية المعلومات والاتصالات والمجتمع</h3><span class="meta">الكتاب ص55–61 • ثلاث حصص</span>
+<div class="pers"><button class="per" data-i="0"><b>الحصة الأولى</b><span>تأثير التقنية على قطاع الأعمال • لعبة سُلّم الوظائف</span></button><button class="per" data-i="1"><b>الحصة الثانية</b><span>الحياة أسهل • التعلم مدى الحياة • الدفع • المحفظة الرقمية</span></button><button class="per" data-i="2"><b>الحصة الثالثة</b><span>التخزين السحابي • الفجوة الرقمية • جسر الفجوة</span></button></div></article>
+</div>
+<div class="view"><button class="back">← العودة لقائمة الدروس</button><iframe allow="fullscreen" allowfullscreen title="الحصة"></iframe></div>
+<script type="text/plain" id="css">:root{
+--paper:#FBF6F9; --card:#FFFFFF; --ink:#1E2142; --muted:#5D5F7A; --line:#EADCE4;
+--berry:#C92A68; --berry-soft:#FBE3ED; --mint:#178F7C; --mint-soft:#DDF3EE;
+--sun:#E9A22B; --sun-soft:#FDF0D6; --sky:#3260C9; --sky-soft:#E2EAFB; --bad:#C2372F; --bad-soft:#FBE1DF;
+--f-display:"El Messiri","Tajawal",serif; --f-body:"IBM Plex Sans Arabic","Tajawal","Segoe UI",Tahoma,sans-serif;
+color-scheme:light;
+}
+html,body{height:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:clamp(17px,1.45vw,25px);line-height:1.75;direction:rtl;overflow:hidden}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,.chip:focus-visible,.box:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.3;margin:0;text-wrap:balance}
+p{margin:0}
+.app{height:100%;display:grid;grid-template-rows:auto 1fr auto}
+.rail{display:flex;align-items:center;gap:1rem;padding:.55rem 16px;border-bottom:1px solid var(--line);background:var(--card);flex-wrap:wrap}
+.rail .course{font-size:.72em;color:var(--muted);white-space:nowrap}
+.rail .course b{color:var(--ink);font-weight:600}
+.stages{display:flex;gap:.35rem;flex-wrap:wrap;margin-inline-start:auto}
+.stages span{font-size:.68em;padding:.15rem .7rem;border-radius:99px;background:var(--paper);color:var(--muted);border:1px solid var(--line);transition:.2s}
+.stages span.on{background:var(--berry);color:#fff;border-color:var(--berry)}
+.stages span.done{color:var(--mint);border-color:var(--mint-soft);background:var(--mint-soft)}
+.deck{position:relative;overflow:hidden}
+.slide{position:absolute;inset:0;overflow-y:auto;padding-block:clamp(1rem,3vh,2.4rem);padding-inline:max(16px,5vw);display:none;flex-direction:column;gap:1.1rem}
+.slide.on{display:flex;animation:in .35s ease}
+@keyframes in{from{opacity:.4;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.tags{display:flex;gap:.45rem;flex-wrap:wrap;align-items:center}
+.tag{font-size:.66em;font-weight:600;padding:.12rem .65rem;border-radius:6px;letter-spacing:.01em}
+.tag.st{background:var(--berry-soft);color:var(--berry)}
+.tag.ev{background:var(--sky-soft);color:var(--sky)}
+.tag.tm{background:var(--sun-soft);color:#8a5a0c}
+.tag.bk{background:var(--mint-soft);color:var(--mint)}
+.slide h2{font-size:2em;color:var(--ink)}
+.slide h2 small{display:block;font-family:var(--f-body);font-size:.42em;color:var(--muted);font-weight:500;margin-top:.2rem}
+.lead{font-size:1.15em;max-width:52ch}
+.note{font-size:.78em;color:var(--muted)}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr))}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr))}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem;min-width:0}
+.panel h3{font-size:1.15em;margin-bottom:.35rem}
+.panel.pos{border-top:5px solid var(--mint)} .panel.neg{border-top:5px solid var(--berry)}
+.list{margin:0;padding-inline-start:1.2rem;display:flex;flex-direction:column;gap:.45rem}
+.book{display:flex;gap:1rem;align-items:flex-start;background:var(--mint-soft);border:2px dashed var(--mint);border-radius:14px;padding:1rem 1.2rem}
+.book .ico{font-family:var(--f-display);font-size:1.6em;line-height:1;background:var(--mint);color:#fff;border-radius:10px;padding:.35rem .6rem;white-space:nowrap}
+.book b{color:var(--mint)}
+.btn{border:0;border-radius:10px;padding:.45rem 1.1rem;background:var(--ink);color:#fff;font-weight:600}
+.btn.soft{background:var(--berry-soft);color:var(--berry)}
+.btn.ok{background:var(--mint)}
+.btn:disabled{opacity:.4;cursor:default}
+.answer{background:var(--sun-soft);border-radius:10px;padding:.6rem 1rem;border-inline-start:5px solid var(--sun)}
+.cover{justify-content:center;align-items:flex-start;gap:1.3rem}
+.cover .kicker{font-size:.85em;color:var(--berry);font-weight:600}
+.cover h1{font-size:clamp(2.2rem,6vw,5.2rem);max-width:14ch}
+.cover .meta{display:flex;gap:.6rem;flex-wrap:wrap}
+.cover .meta span{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.2rem .8rem;font-size:.8em}
+.cover .plan{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.6rem}
+.cover .plan span{font-size:.75em;padding:.25rem .8rem;border-radius:99px;background:var(--ink);color:#fff}
+.cover .plan span:nth-child(even){background:var(--berry)}
+.goals{counter-reset:g;display:flex;flex-direction:column;gap:.8rem;max-width:46rem}
+.goals li{list-style:none;display:flex;gap:1rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.8rem 1.1rem;font-size:1.15em}
+.goals li::before{counter-increment:g;content:counter(g);font-family:var(--f-display);font-size:1.4em;color:#fff;background:var(--berry);border-radius:10px;min-width:2.2em;text-align:center}
+.lesson-title{font-size:clamp(2rem,4.5vw,3.6rem);color:var(--berry)}
+.flip{perspective:900px;min-height:9rem;border:0;background:none;padding:0;text-align:inherit}
+.flip .in{position:relative;height:100%;min-height:9rem;transition:transform .55s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;padding:1rem 1.1rem;display:flex;flex-direction:column;justify-content:center;gap:.3rem}
+.flip .f{background:var(--card);border:2px solid var(--line)}
+.flip .b{background:var(--ink);color:#fff;transform:rotateY(180deg)}
+.flip .f small,.flip .b small{font-size:.7em;opacity:.75}
+.flip .f .q{font-size:1.05em;font-weight:600}
+.sorter{display:grid;gap:1rem}
+.pool{display:flex;flex-wrap:wrap;gap:.6rem;min-height:3rem}
+.chip{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:.45rem .9rem;font-size:.85em;text-align:start;max-width:100%}
+.chip.sel{border-color:var(--sky);background:var(--sky-soft)}
+.chip.good{border-color:var(--mint);background:var(--mint-soft);cursor:default}
+.chip.shake{animation:shake .4s;border-color:var(--bad);background:var(--bad-soft)}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.bins{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}
+.bin{border:3px dashed var(--line);border-radius:16px;padding:.8rem;min-height:8rem;display:flex;flex-direction:column;gap:.5rem;background:var(--card);cursor:pointer;text-align:start}
+.bin h3{font-size:1.1em}
+.bin.pos{border-color:var(--mint)} .bin.neg{border-color:var(--berry)}
+.score{font-weight:700;color:var(--berry)}
+.votes{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr))}
+.vote{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:.7rem .9rem;display:flex;flex-direction:column;gap:.5rem}
+.vote b{font-size:1.05em}
+.vote .opts{display:flex;gap:.4rem}
+.vote .opts button{flex:1;border:2px solid var(--line);background:var(--paper);border-radius:9px;padding:.2rem;font-size:.85em}
+.vote .opts button.up.on{background:var(--mint);border-color:var(--mint);color:#fff}
+.vote .opts button.down.on{background:var(--berry);border-color:var(--berry);color:#fff}
+.boxes{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,8rem),1fr))}
+.box{aspect-ratio:1/1;max-width:100%;border:0;border-radius:16px;background:var(--berry);color:#fff;font-family:var(--f-display);font-size:2.6em;box-shadow:0 6px 0 #8f1c49;transition:transform .15s}
+.box:hover{transform:translateY(-3px)}
+.box:nth-child(3n+2){background:var(--sky);box-shadow:0 6px 0 #1f3f8a}
+.box:nth-child(3n){background:var(--sun);box-shadow:0 6px 0 #a26e12}
+.box.used{background:var(--line);box-shadow:none;color:var(--muted)}
+.stagebox{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:1rem 1.3rem;display:flex;flex-direction:column;gap:.7rem}
+.stagebox .q{font-size:1.25em;font-weight:600}
+.wheel-wrap{display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
+.wheel-box{position:relative;width:min(22rem,80vw);aspect-ratio:1/1}
+.wheel{width:100%;height:100%;border-radius:50%;border:8px solid var(--ink);transition:transform 3.2s cubic-bezier(.17,.67,.2,1);position:relative}
+.wheel span{position:absolute;inset:0;display:flex;justify-content:center;padding-top:6%;font-family:var(--f-display);font-size:1.7em;color:#fff}
+.pin{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:16px solid transparent;border-right:16px solid transparent;border-top:30px solid var(--ink);z-index:2}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.match .col{display:flex;flex-direction:column;gap:.55rem;min-width:0}
+.match .chip{width:100%}
+.match .chip.paired{cursor:default}
+.fill p{font-size:1.1em;line-height:2.3}
+.blank{display:inline-block;min-width:7em;border-bottom:3px solid var(--sky);text-align:center;cursor:pointer;color:var(--sky);font-weight:700;padding-inline:.4rem}
+.blank.sel{background:var(--sky-soft)}
+.blank.good{border-color:var(--mint);color:var(--mint);cursor:default}
+.bank{display:flex;flex-wrap:wrap;gap:.5rem}
+.tiles{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr))}
+.tile{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:.8rem 1rem;text-align:start;display:flex;flex-direction:column;gap:.35rem}
+.tile .h{display:flex;gap:.6rem;align-items:center;font-family:var(--f-display);font-size:1.2em}
+.tile .h i{font-style:normal;background:var(--berry);color:#fff;border-radius:8px;padding:0 .55rem;font-size:.85em}
+.tile .d{font-size:.85em;color:var(--muted)}
+.tile.on{border-color:var(--berry)}
+.guide{width:100%;border-collapse:separate;border-spacing:0 .5rem}
+.guide td,.guide th{padding:.5rem .8rem;text-align:start;vertical-align:middle}
+.guide th{font-size:.75em;color:var(--muted);font-weight:600}
+.guide td{background:var(--card);border-block:1px solid var(--line)}
+.guide td:first-child{border-inline-start:1px solid var(--line);border-radius:0 12px 12px 0}
+.guide td:last-child{border-inline-end:1px solid var(--line);border-radius:12px 0 0 12px}
+.yn{display:flex;gap:.35rem}
+.yn button{border:2px solid var(--line);background:var(--paper);border-radius:8px;padding:.1rem .7rem;font-size:.8em;white-space:nowrap}
+.yn button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.verdict{font-weight:700} .verdict.y{color:var(--mint)} .verdict.n{color:var(--berry)}
+.scroll-x{overflow-x:auto}
+.game{display:grid;gap:1.2rem;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:start}
+@media (max-width:820px){.game{grid-template-columns:1fr}}
+.qcard{background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:1.1rem 1.3rem;display:flex;flex-direction:column;gap:.8rem}
+.qcard .qn{font-size:.75em;color:var(--muted)}
+.qcard .qt{font-size:1.3em;font-weight:700;line-height:1.5}
+.qcard .turn{font-size:.85em;font-weight:700}
+.opts-g{display:flex;flex-direction:column;gap:.55rem}
+.opts-g button{border:2px solid var(--line);background:var(--paper);border-radius:12px;padding:.55rem 1rem;text-align:start}
+.opts-g button:hover:not(:disabled){border-color:var(--sky)}
+.opts-g button.right{background:var(--mint);border-color:var(--mint);color:#fff}
+.opts-g button.wrong{background:var(--bad-soft);border-color:var(--bad)}
+.opts-g button:disabled{cursor:default}
+.feedback{font-weight:700;min-height:1.6em}
+.feedback.y{color:var(--mint)} .feedback.n{color:var(--bad)}
+.visual{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1rem;display:flex;flex-direction:column;gap:.7rem;align-items:center}
+.visual h3{font-size:1.1em}
+.ladders{display:flex;gap:1.5rem;justify-content:center;width:100%}
+.ladder{display:flex;flex-direction:column;align-items:center;gap:.3rem}
+.ladder .name{font-weight:700}
+.rungs{display:flex;flex-direction:column-reverse;gap:.3rem;border-inline:6px solid var(--ink);padding:.3rem .5rem;border-radius:4px}
+.rung{width:5.5rem;height:2rem;border-radius:6px;background:var(--paper);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.75em;color:var(--muted)}
+.rung.top{border-style:dashed;border-color:var(--sun)}
+.ladder.a .rung.on{background:var(--berry);border-color:var(--berry);color:#fff}
+.ladder.b .rung.on{background:var(--sky);border-color:var(--sky);color:#fff}
+.ladder .pts{font-family:var(--f-display);font-size:1.6em}
+.wallet{width:100%;max-width:20rem;aspect-ratio:1.58/1;border-radius:18px;background:linear-gradient(135deg,var(--ink),#3a3f78);color:#fff;padding:1rem 1.2rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.wallet::after{content:"";position:absolute;width:9rem;height:9rem;border-radius:50%;background:var(--berry);opacity:.35;left:-2rem;bottom:-3rem}
+.wallet .chipc{width:2.6rem;height:2rem;border-radius:6px;background:var(--sun)}
+.wallet .bal{font-family:var(--f-display);font-size:2.4em;font-variant-numeric:tabular-nums;position:relative;z-index:1}
+.wallet .lbl{font-size:.75em;opacity:.8;position:relative;z-index:1}
+.wallet.pop{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.06)}}
+.goalbar{width:100%;height:.8rem;background:var(--paper);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.goalbar i{display:block;height:100%;background:var(--mint);width:0;transition:width .4s}
+.receipt{width:100%;font-size:.75em;color:var(--muted);display:flex;flex-direction:column;gap:.1rem;max-height:7rem;overflow:auto}
+.chasm{width:100%;display:grid;grid-template-columns:3.5rem 1fr 3.5rem;align-items:end;height:12rem}
+.cliff{height:100%;border-radius:10px 10px 0 0;background:var(--mint);display:flex;align-items:flex-start;justify-content:center;padding-top:.4rem;font-size:.7em;color:#fff;font-weight:700;text-align:center}
+.cliff.l{background:var(--muted)}
+.gap{height:100%;position:relative;background:linear-gradient(var(--sky-soft),var(--card))}
+.planks{position:absolute;top:0;inset-inline:0;display:grid;gap:3px;padding-inline:2px}
+.plank{height:1.2rem;background:var(--line);border-radius:3px;opacity:.35;transition:.3s}
+.plank.on{background:var(--sun);opacity:1;box-shadow:0 3px 0 #a26e12}
+.plank.wob{animation:shake .4s}
+.walker{position:absolute;top:-2.2rem;font-size:1.6em;transition:inset-inline-start .5s}
+.bar{display:flex;align-items:center;gap:.6rem;padding:.5rem 16px;border-top:1px solid var(--line);background:var(--card);flex-wrap:wrap}
+.bar .nav{display:flex;gap:.4rem}
+.bar .count{font-variant-numeric:tabular-nums;font-size:.8em;color:var(--muted);min-width:4rem;text-align:center}
+.bar .title{font-size:.8em;color:var(--muted);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prog{position:absolute;top:0;inset-inline:0;height:4px;background:var(--line)}
+.prog i{display:block;height:100%;background:var(--berry);transition:width .3s}
+.timer{display:flex;align-items:center;gap:.4rem;font-variant-numeric:tabular-nums}
+.timer .t{font-family:var(--f-display);font-size:1.15em;min-width:3.2em;text-align:center}
+.timer.done .t{color:#fff;background:var(--bad);border-radius:8px;animation:pop 1s infinite}
+.iconbtn{border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:.25rem .7rem;font-size:.8em}
+.bar .btn{padding:.3rem 1rem}</script>
+<script type="text/plain" id="js">(function(){
+const STAGES={review:"مراجعة الدرس السابق",warm:"نشاط تمهيدي",goals:"العنوان والأهداف",learn:"الشرح",close:"النشاط الختامي",task:"المهام والواجب"};
+const order=["review","warm","goals","learn","close","task"];
+const slides=[...document.querySelectorAll('.slide')];
+const stagesEl=document.querySelector('.stages');
+const present=order.filter(s=>slides.some(x=>x.dataset.stage===s));
+stagesEl.innerHTML=present.map(s=>`<span data-s="${s}">${STAGES[s]}</span>`).join('');
+const prog=document.querySelector('.prog i'),count=document.querySelector('.count'),ttl=document.querySelector('.bar .title');
+let cur=0;
+const timerEl=document.querySelector('.timer'),tT=timerEl.querySelector('.t'),tBtn=timerEl.querySelector('button');
+let tLeft=0,tInt=null;
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function resetTimer(){clearInterval(tInt);tInt=null;timerEl.classList.remove('done');const t=+slides[cur].dataset.time||0;tLeft=t;timerEl.hidden=!t;tT.textContent=fmt(t);tBtn.textContent='ابدئي المؤقت'}
+tBtn.onclick=()=>{if(tInt){clearInterval(tInt);tInt=null;tBtn.textContent='استئناف';return}
+if(tLeft<=0)resetTimer();tBtn.textContent='إيقاف';tInt=setInterval(()=>{tLeft--;tT.textContent=fmt(Math.max(tLeft,0));if(tLeft<=0){clearInterval(tInt);tInt=null;timerEl.classList.add('done');tBtn.textContent='إعادة'}},1000)};
+function go(i){
+cur=Math.max(0,Math.min(slides.length-1,i));
+slides.forEach((s,k)=>s.classList.toggle('on',k===cur));
+const st=slides[cur].dataset.stage,si=present.indexOf(st);
+stagesEl.querySelectorAll('span').forEach((e,k)=>{e.classList.toggle('on',k===si);e.classList.toggle('done',k<si)});
+prog.style.width=((cur+1)/slides.length*100)+'%';
+count.textContent=(cur+1)+' / '+slides.length;
+ttl.textContent=slides[cur].dataset.title||'';
+slides[cur].scrollTop=0;resetTimer();
+slides[cur].dispatchEvent(new Event('show'));
+}
+document.querySelector('[data-nav=next]').onclick=()=>go(cur+1);
+document.querySelector('[data-nav=prev]').onclick=()=>go(cur-1);
+document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea'))return;
+if(e.key==='ArrowLeft'||e.key==='PageDown'){go(cur+1);e.preventDefault()}
+if(e.key==='ArrowRight'||e.key==='PageUp'){go(cur-1);e.preventDefault()}});
+const fs=document.querySelector('[data-fs]');
+fs.onclick=()=>{try{if(!document.fullscreenElement){document.documentElement.requestFullscreen().catch(()=>{})}else{document.exitFullscreen().catch(()=>{})}}catch(e){}};
+/* flip & reveal & tiles */
+document.addEventListener('click',e=>{
+const f=e.target.closest('.flip');if(f){f.classList.toggle('on');return}
+const r=e.target.closest('[data-reveal]');if(r){const t=document.getElementById(r.dataset.reveal);t.hidden=!t.hidden;r.textContent=t.hidden?(r.dataset.l1||'أظهري الإجابة'):(r.dataset.l2||'إخفاء');return}
+const tl=e.target.closest('.tile[data-x]');if(tl){tl.classList.toggle('on');const d=tl.querySelector('.d');d.hidden=!d.hidden}
+});
+/* sorter */
+document.querySelectorAll('.sorter').forEach(S=>{
+let sel=null;const chips=[...S.querySelectorAll('.pool .chip')],sc=S.querySelector('.score');
+const upd=()=>{if(sc)sc.textContent=S.querySelectorAll('.bin .chip').length+' / '+chips.length};upd();
+chips.forEach(c=>c.onclick=()=>{if(c.classList.contains('good'))return;chips.forEach(x=>x.classList.remove('sel'));sel=c;c.classList.add('sel')});
+S.querySelectorAll('.bin').forEach(b=>b.onclick=e=>{if(!sel||e.target.closest('.chip'))return;
+if(sel.dataset.bin===b.dataset.bin){sel.classList.remove('sel');sel.classList.add('good');b.appendChild(sel);sel=null;upd()}
+else{const s=sel;s.classList.remove('shake');void s.offsetWidth;s.classList.add('shake')}});
+});
+/* votes (shared store for later comparison) */
+window.VOTES={};
+document.querySelectorAll('.vote').forEach(v=>{v.querySelectorAll('.opts button').forEach(b=>b.onclick=()=>{
+const on=!b.classList.contains('on');v.querySelectorAll('.opts button').forEach(x=>x.classList.remove('on'));
+if(on){b.classList.add('on');VOTES[v.dataset.k]=b.classList.contains('up')?'+':'-'}else delete VOTES[v.dataset.k]})});
+/* mystery boxes */
+document.querySelectorAll('.boxes').forEach(B=>{
+const data=JSON.parse(document.getElementById(B.dataset.src).textContent),out=document.getElementById(B.dataset.out);
+B.innerHTML=data.map((d,i)=>`<button class="box" data-i="${i}" aria-label="صندوق ${i+1}">${i+1}</button>`).join('');
+B.onclick=e=>{const b=e.target.closest('.box');if(!b)return;b.classList.add('used');const d=data[b.dataset.i];
+out.hidden=false;out.innerHTML=`<span class="note">صندوق ${+b.dataset.i+1}</span><p class="q">${d.q}</p><div><button class="btn soft" data-reveal="mb-a">أظهري الإجابة</button></div><div class="answer" id="mb-a" hidden>${d.a}</div>`};
+});
+/* wheel */
+document.querySelectorAll('[data-wheel]').forEach(W=>{
+const data=JSON.parse(document.getElementById(W.dataset.wheel).textContent),n=data.length,wh=W.querySelector('.wheel'),out=W.querySelector('.stagebox');
+const cols=['var(--berry)','var(--sky)','var(--sun)','var(--mint)','#7a4fc0','#e0663a'];
+wh.style.background='conic-gradient('+data.map((_,i)=>`${cols[i%cols.length]} ${i*360/n}deg ${(i+1)*360/n}deg`).join(',')+')';
+wh.innerHTML=data.map((_,i)=>`<span style="transform:rotate(${(i+.5)*360/n}deg)">${i+1}</span>`).join('');
+let rot=0,used=new Set();
+W.querySelector('[data-spin]').onclick=()=>{let k;const left=[...Array(n).keys()].filter(i=>!used.has(i));if(!left.length){used.clear();return}
+k=left[Math.floor(Math.random()*left.length)];used.add(k);
+const target=360-((k+.5)*360/n);rot+=1440+((target-rot%360)+360)%360;wh.style.transform=`rotate(${rot}deg)`;out.hidden=true;
+setTimeout(()=>{out.hidden=false;out.innerHTML=`<span class="note">السؤال ${k+1}</span><p class="q">${data[k].q}</p><div><button class="btn soft" data-reveal="wh-a">أظهري الإجابة</button></div><div class="answer" id="wh-a" hidden>${data[k].a}</div>`},3300)};
+});
+/* match */
+document.querySelectorAll('.match').forEach(M=>{
+let pick=null;const cols=['var(--berry)','var(--sky)','var(--sun)','var(--mint)','#7a4fc0','#e0663a'];let c=0;
+const sc=M.parentElement.querySelector('.score'),total=M.querySelectorAll('.col.a .chip').length;
+M.querySelectorAll('.col.a .chip').forEach(a=>a.onclick=()=>{if(a.classList.contains('paired'))return;M.querySelectorAll('.col.a .chip').forEach(x=>x.classList.remove('sel'));pick=a;a.classList.add('sel')});
+M.querySelectorAll('.col.b .chip').forEach(b=>b.onclick=()=>{if(!pick||b.classList.contains('paired'))return;
+if(pick.dataset.k===b.dataset.k){const col=cols[c++%cols.length];[pick,b].forEach(x=>{x.classList.remove('sel');x.classList.add('paired');x.style.borderColor=col;x.style.boxShadow=`inset -8px 0 0 ${col}`});pick=null;
+if(sc)sc.textContent=M.querySelectorAll('.col.a .paired').length+' / '+total}
+else{b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake')}});
+});
+/* fill blanks */
+document.querySelectorAll('.fill').forEach(F=>{
+let sel=null;const bl=[...F.querySelectorAll('.blank')];
+bl.forEach(b=>{b.textContent='؟';b.tabIndex=0;b.onclick=()=>{if(b.classList.contains('good'))return;bl.forEach(x=>x.classList.remove('sel'));sel=b;b.classList.add('sel')}});
+F.querySelectorAll('.bank .chip').forEach(w=>w.onclick=()=>{if(!sel||w.classList.contains('good'))return;
+if(sel.dataset.a===w.textContent.trim()){sel.textContent=w.textContent;sel.classList.remove('sel');sel.classList.add('good');w.classList.add('good');sel=null}
+else{w.classList.remove('shake');void w.offsetWidth;w.classList.add('shake')}});
+});
+/* anticipation guide */
+window.GUIDE={};
+document.querySelectorAll('.yn').forEach(y=>y.querySelectorAll('button').forEach(b=>b.onclick=()=>{y.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');GUIDE[y.dataset.k]=b.dataset.v}));
+document.querySelectorAll('[data-guide-after]').forEach(T=>{
+const data=JSON.parse(document.getElementById(T.dataset.guideAfter).textContent);
+T.closest('.slide').addEventListener('show',()=>{T.innerHTML='<tr><th>العبارة</th><th>رأي الصف قبل الدرس</th><th>بعد الدرس</th></tr>'+data.map(d=>{const g=GUIDE[d.k];const before=g?(g==='y'?'أوافق':'لا أوافق'):'—';
+return `<tr><td>${d.s}</td><td>${before}</td><td><span class="verdict ${d.v}">${d.v==='y'?'صحيحة':'غير صحيحة'}</span><div class="note">${d.why}</div></td></tr>`}).join('')});
+});
+/* vote compare */
+document.querySelectorAll('[data-compare]').forEach(T=>{
+const data=JSON.parse(document.getElementById(T.dataset.compare).textContent);
+T.closest('.slide').addEventListener('show',()=>{let hit=0,n=0;T.innerHTML='<tr><th>المهنة</th><th>توقع الصف</th><th>الكتاب</th><th>التفسير</th></tr>'+data.map(d=>{const v=VOTES[d.k];if(v){n++;if(v===d.v)hit++}
+const mark=v?(v===d.v?' ✓':' ✗'):'';return `<tr><td><b>${d.job}</b></td><td>${v?(v==='+'?'إيجاباً':'سلباً')+mark:'—'}</td><td><span class="verdict ${d.v==='+'?'y':'n'}">${d.v==='+'?'إيجاباً (+)':'سلباً (-)'}</span></td><td class="note">${d.why}</td></tr>`}).join('');
+const s=T.closest('.slide').querySelector('.cmp-score');if(s)s.textContent=n?`أصاب الصف ${hit} من ${n} توقعات`:'لم تُسجَّل توقعات في النشاط التمهيدي'});
+});
+/* quiz games */
+document.querySelectorAll('.game').forEach(G=>{
+const qs=JSON.parse(document.getElementById(G.dataset.src).textContent),mode=G.dataset.game;
+const qn=G.querySelector('.qn'),qt=G.querySelector('.qt'),og=G.querySelector('.opts-g'),fb=G.querySelector('.feedback'),nx=G.querySelector('.next'),turn=G.querySelector('.turn'),vis=G.querySelector('.visual');
+let i=0,team=0,sc=[0,0],bal=0;const goal=+G.dataset.goal||qs.length;
+function draw(){
+if(mode==='ladder'){const R=+G.dataset.rungs||5;vis.innerHTML='<h3>سُلّم الوظائف</h3><div class="ladders">'+['أ','ب'].map((t,k)=>`<div class="ladder ${k?'b':'a'}"><span class="name">الفريق ${t}</span><div class="rungs">${[...Array(R)].map((_,r)=>`<div class="rung ${r<sc[k]?'on':''} ${r===R-1?'top':''}">${r===R-1?'القمة':'درجة '+(r+1)}</div>`).join('')}</div><span class="pts">${sc[k]}</span></div>`).join('')+'</div>';
+turn.textContent='الدور على: الفريق '+(team?'ب':'أ');turn.style.color=team?'var(--sky)':'var(--berry)'}
+if(mode==='wallet'){vis.innerHTML=`<h3>المحفظة الرقمية للصف</h3><div class="wallet"><div class="chipc"></div><div><div class="lbl">الرصيد</div><div class="bal">${bal} ريال</div></div><div class="lbl">الهدف: ${goal*10} ريال</div></div><div class="goalbar"><i style="width:${Math.min(100,bal/(goal*10)*100)}%"></i></div><div class="receipt">${G._log||''}</div>`;turn.textContent=''}
+if(mode==='bridge'){const P=goal;vis.innerHTML=`<h3>ابني جسراً فوق الفجوة الرقمية</h3><div class="chasm"><div class="cliff l">بلا إمكانية وصول</div><div class="gap"><div class="planks" style="grid-template-columns:repeat(${P},1fr)">${[...Array(P)].map((_,k)=>`<div class="plank ${k<bal?'on':''}"></div>`).join('')}</div></div><div class="cliff">مجتمع رقمي</div></div><p class="note">ألواح الجسر: ${bal} / ${P}</p>`;turn.textContent=''}
+}
+function show(){
+if(i>=qs.length){end();return}
+const q=qs[i];qn.textContent='السؤال '+(i+1)+' من '+qs.length;qt.textContent=q.q;fb.textContent='';fb.className='feedback';nx.hidden=true;
+const idx=q.o.map((_,k)=>k);for(let k=idx.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[idx[k],idx[j]]=[idx[j],idx[k]]}
+og.innerHTML=idx.map(k=>`<button data-k="${k}">${q.o[k]}</button>`).join('');draw();
+}
+og.onclick=e=>{const b=e.target.closest('button');if(!b||b.disabled)return;const q=qs[i],ok=+b.dataset.k===0;
+og.querySelectorAll('button').forEach(x=>{x.disabled=true;if(+x.dataset.k===0)x.classList.add('right')});if(!ok)b.classList.add('wrong');
+fb.textContent=ok?'إجابة صحيحة!':'ليست هذه.. الإجابة الصحيحة مظللة بالأخضر';fb.className='feedback '+(ok?'y':'n');
+if(ok){if(mode==='ladder')sc[team]++;else{bal+=mode==='wallet'?10:1;if(mode==='wallet')G._log=`<span>✔ السؤال ${i+1}: +10 ريال</span>`+(G._log||'')}}
+if(mode==='ladder')team=1-team;
+draw();if(ok&&mode==='wallet'){const w=G.querySelector('.wallet');w&&w.classList.add('pop')}
+if(!ok&&mode==='bridge'){const p=G.querySelectorAll('.plank')[bal];p&&p.classList.add('wob')}
+if(q.w){fb.textContent+=' — '+q.w}
+nx.hidden=false;nx.textContent=i===qs.length-1?'النتيجة':'السؤال التالي';
+};
+nx.onclick=()=>{i++;show()};
+function end(){qn.textContent='انتهت اللعبة';og.innerHTML='';nx.hidden=true;draw();
+if(mode==='ladder')qt.textContent=sc[0]===sc[1]?'تعادل! أحسنتما يا فريقين':'الفوز للفريق '+(sc[0]>sc[1]?'أ':'ب')+' 🎉';
+if(mode==='wallet')qt.textContent='رصيد الصف النهائي: '+bal+' ريال';
+if(mode==='bridge')qt.textContent=bal>=goal?'اكتمل الجسر! عبرنا الفجوة الرقمية 🎉':'بُني '+bal+' من '+goal+' ألواح';
+fb.innerHTML='<button class="btn soft" data-restart>إعادة اللعبة</button>'}
+G.addEventListener('click',e=>{if(e.target.closest('[data-restart]')){i=0;team=0;sc=[0,0];bal=0;G._log='';show()}});
+show();
+});
+go(0);
+})();</script>
+<script type="text/plain" id="t0"><div class="app"><header class="rail"><span class="course"><b>تقنية رقمية 1-1</b> • الدرس الخامس: تقنية المعلومات والاتصالات والمجتمع • الحصة الأولى من ثلاث</span><nav class="stages"></nav></header><main class="deck"><div class="prog"><i></i></div>
+
+
+<section class="slide cover" data-stage="review" data-title="الغلاف"><span class="kicker">الحصة الأولى من ثلاث حصص</span><h1>تقنية المعلومات والاتصالات والمجتمع</h1><div class="meta"><span>الدرس الخامس</span><span>الوحدة الأولى: أساسيات علم الحاسب</span><span>الكتاب ص55</span></div><div class="plan"><span>مراجعة</span><span>نشاط: صعود أم هبوط؟</span><span>الأهداف</span><span>الشرح</span><span>لعبة سُلّم الوظائف</span></div></section><section class="slide" data-stage="review" data-title="مراجعة الدرس السابق" data-time="300"><div class="tags"><span class="tag st">استراتيجية: الأسئلة السابرة</span><span class="tag ev">تقويم تشخيصي</span><span class="tag tm">5 دقائق • فردي</span></div><h2>مراجعة الدرس السابق<small>اضغطي على كل بطاقة بعد أن تجيب الطالبة شفهياً</small></h2><div class="grid"><button class="flip"><div class="in"><div class="f"><small>سؤال 1</small><span class="q">هل يفهم الحاسب النص أو الصورة أو الفيديو؟</span></div><div class="b"><small>للمعلمة</small>ناقشي الإجابات واستمعي لأكبر عدد من الطالبات</div></div></button><button class="flip"><div class="in"><div class="f"><small>سؤال 2</small><span class="q">هل يدرك الحاسب لغة البشر؟</span></div><div class="b"><small>للمعلمة</small>اطلبي من الطالبة تبرير إجابتها</div></div></button><button class="flip"><div class="in"><div class="f"><small>سؤال 3</small><span class="q">إذن.. ماذا يفهم الحاسب؟</span></div><div class="b"><small>للمعلمة</small>اربطي الإجابة بما تعلمته الطالبات في الدرس السابق</div></div></button></div></section><section class="slide" data-stage="warm" data-title="نشاط تمهيدي: صعود أم هبوط؟" data-time="180"><div class="tags"><span class="tag st">استراتيجية: التصويت الصفي وتنشيط المعرفة السابقة</span><span class="tag ev">تقويم تشخيصي</span><span class="tag tm">3 دقائق • جماعي</span></div><h2>صعود أم هبوط؟<small>هل تأثرت هذه المهن إيجاباً أم سلباً بالتقنية؟ صوّتي مع زميلاتك، وسجّلي رأي الأغلبية. سنكشف الإجابة في آخر الحصة!</small></h2><div class="votes"><div class="vote" data-k="web"><b>مصمم الويب</b><div class="opts"><button class="up">▲ إيجاباً</button><button class="down">▼ سلباً</button></div></div><div class="vote" data-k="shop"><b>عامل المتجر</b><div class="opts"><button class="up">▲ إيجاباً</button><button class="down">▼ سلباً</button></div></div><div class="vote" data-k="bank"><b>المحاسب في البنوك</b><div class="opts"><button class="up">▲ إيجاباً</button><button class="down">▼ سلباً</button></div></div><div class="vote" data-k="sa"><b>محلل النظم</b><div class="opts"><button class="up">▲ إيجاباً</button><button class="down">▼ سلباً</button></div></div><div class="vote" data-k="prog"><b>مبرمج الحاسب</b><div class="opts"><button class="up">▲ إيجاباً</button><button class="down">▼ سلباً</button></div></div><div class="vote" data-k="office"><b>موظف الأعمال المكتبية</b><div class="opts"><button class="up">▲ إيجاباً</button><button class="down">▼ سلباً</button></div></div><div class="vote" data-k="eng"><b>مهندس الحاسب</b><div class="opts"><button class="up">▲ إيجاباً</button><button class="down">▼ سلباً</button></div></div><div class="vote" data-k="tel"><b>موظف بدالة الهاتف</b><div class="opts"><button class="up">▲ إيجاباً</button><button class="down">▼ سلباً</button></div></div><div class="vote" data-k="lib"><b>أمين المكتبة</b><div class="opts"><button class="up">▲ إيجاباً</button><button class="down">▼ سلباً</button></div></div></div><p class="note">سؤال للنقاش: هل تعتقدين أن لتقنية المعلومات والاتصالات تأثيراً على أماكن العمل؟</p></section><section class="slide" data-stage="goals" data-title="عنوان الدرس وأهداف الحصة"><span class="note">الدرس الخامس • الحصة الأولى</span><h1 class="lesson-title">تقنية المعلومات والاتصالات والمجتمع</h1><h2 style="font-size:1.3em">أهداف الحصة الأولى</h2><ol class="goals"><li>معرفة تأثير تقنية المعلومات والاتصالات على قطاع الأعمال (الإيجابيات والتحديات).</li><li>تعداد الآثار الرئيسية الثلاثة لإدخال التقنية إلى قطاع الأعمال.</li><li>تصنيف المهن التي تأثرت إيجاباً أو سلباً بالتقنية مع التفسير.</li></ol></section><section class="slide" data-stage="learn" data-title="مقدمة: التقنية وأماكن العمل"><div class="tags"><span class="tag st">استراتيجية: العرض المباشر والأسئلة الموجهة</span><span class="tag bk">الكتاب ص55</span></div><h2>التقنية وأماكن العمل</h2><p class="lead">أدركت الشركات والصناعات الفوائد العظيمة لاستخدام أجهزة الحاسب، وأصبح من المتوقع أن يمتلك الموظفون مهارات استخدامها، مما أحدث تغييرات جذرية في كيفية قيام هؤلاء الموظفين بممارسة وظائفهم.</p><p class="lead">لقد أثرت تقنية المعلومات والاتصالات <b>(ICT)</b> على قطاع الأعمال <b style="color:var(--mint)">إيجاباً</b> ولكن هناك <b style="color:var(--berry)">تحديات</b> في حياة الناس العملية في جميع المجالات.</p><div class="panel" style="border-top:5px solid var(--sun)"><h3>سؤال موجّه</h3><p>فكّري في عمل أحد أفراد أسرتك: ما المهارات التقنية التي يحتاجها اليوم ولم يكن يحتاجها من قبل؟</p></div></section><section class="slide" data-stage="learn" data-title="الإيجابيات والتحديات"><div class="tags"><span class="tag st">استراتيجية: العرض المباشر</span><span class="tag bk">الكتاب ص55</span></div><h2>تأثير تقنية المعلومات والاتصالات على قطاع الأعمال</h2><div class="grid two"><div class="panel pos"><h3 style="color:var(--mint)">الإيجابيات</h3><ul class="list"><li>زادت من سرعة وكفاءة إنجاز الأعمال بشكل كبير.</li><li>بعض المهام مثل تدوين الملاحظات والعصف الذهني تصبح أسهل مع استخدام التقنيات الجديدة.</li><li>تعمل مؤتمرات الفيديو وغيرها من التقنيات الجديدة للاتصال على تحسين التفاعل بين الموظفين.</li><li>يمكن للموظفين العمل عن بعد دون الحاجة إلى الذهاب إلى أماكن عملهم، حيث يعمل هذا على توفير الوقت والموارد.</li></ul></div><div class="panel neg"><h3 style="color:var(--berry)">التحديات</h3><ul class="list"><li>ليس من السهل دائماً تعلم التقنيات الجديدة خاصة بالنسبة لكبار السن الذين يتفاعلون بشكل أقل مع التقنية.</li><li>قد يتعرض الموظفون المكتبيون لتشتت انتباههم بسبب البريد الإلكتروني أو رسائل المحادثة الفورية أو المكالمات الهاتفية أو غيرها.</li><li>قد تسبب اللغة المكتوبة (عبر رسائل البريد الإلكتروني) حدوث سوء فهم، خاصة إذا كان المرسل أو المرسل إليه على غير معرفة كافية بهذه اللغة، حيث يتميز التواصل المباشر دائماً بوضوح التعبير.</li><li>يتسبب الاستخدام المفرط للتقنية ببعض المشاكل الصحية مثل ضعف الرؤية ومشاكل العضلات والعظام وأمراض القلب.</li></ul></div></div></section><section class="slide" data-stage="learn" data-title="نشاط: ميزان التقنية" data-time="180"><div class="tags"><span class="tag st">استراتيجية: التعلم التعاوني (فكّري، زاوجي، شاركي)</span><span class="tag ev">تقويم تكويني</span><span class="tag tm">3 دقائق • ثنائي</span></div><h2>ميزان التقنية<small>اضغطي على العبارة ثم على الكفة المناسبة. هل ترجح كفة الإيجابيات أم التحديات؟</small></h2><div class="sorter"><div class="pool"><button class="chip" data-bin="neg">تشتت انتباه الموظفين بسبب البريد الإلكتروني والمحادثات الفورية</button><button class="chip" data-bin="pos">زيادة سرعة وكفاءة إنجاز الأعمال</button><button class="chip" data-bin="neg">صعوبة تعلم التقنيات الجديدة لكبار السن</button><button class="chip" data-bin="pos">تحسين التفاعل بين الموظفين بمؤتمرات الفيديو</button><button class="chip" data-bin="neg">سوء الفهم في الرسائل المكتوبة</button><button class="chip" data-bin="pos">العمل عن بعد يوفر الوقت والموارد</button><button class="chip" data-bin="neg">ضعف الرؤية ومشاكل العضلات والعظام</button><button class="chip" data-bin="pos">تدوين الملاحظات والعصف الذهني أسهل</button></div><div class="bins"><div class="bin pos" data-bin="pos"><h3 style="color:var(--mint)">كفة الإيجابيات</h3></div><div class="bin neg" data-bin="neg"><h3 style="color:var(--berry)">كفة التحديات</h3></div></div><p>العبارات الموزعة: <span class="score"></span></p></div></section><section class="slide" data-stage="learn" data-title="الآثار الرئيسية الثلاثة"><div class="tags"><span class="tag st">استراتيجية: الحوار والمناقشة</span><span class="tag ev">تقويم تكويني</span></div><h2>ترتب على إدخال التقنية إلى قطاع الأعمال ثلاثة آثار رئيسية<small>اضغطي على كل أثر، ثم اطلبي من الطالبات ذكر أمثلة</small></h2><div class="grid"><button class="flip"><div class="in"><div class="f"><small>الأثر a</small><span class="q">إلغاء بعض الوظائف والاستغناء عن العاملين بها</span></div><div class="b"><small>اذكري أمثلة ؟</small>من وظيفة ألغيت أو قلّ العاملون بها بسبب التقنية</div></div></button><button class="flip"><div class="in"><div class="f"><small>الأثر b</small><span class="q">استحداث وظائف جديدة بسبب وجود الحاجة للعامل البشري</span></div><div class="b"><small>اذكري أمثلة ؟</small>وظيفة جديدة ظهرت مع التقنية</div></div></button><button class="flip"><div class="in"><div class="f"><small>الأثر c</small><span class="q">الحاجة لتدريب وتأهيل الموظفين ليكونوا قادرين على استخدام التقنية</span></div><div class="b"><small>اذكري أمثلة ؟</small>مهارة تقنية يحتاج الموظف أن يتدرب عليها</div></div></button></div><div class="book"><span class="ico">الكتاب</span><p>افتحي كتابك على الدرس الخامس، واقرئي الفقرة التي تتحدث عن الآثار الرئيسية لإدخال التقنية إلى قطاع الأعمال. <b>ضعي خطاً تحت الآثار الثلاثة</b> في كتابك.</p></div></section><section class="slide" data-stage="learn" data-title="وظائف تأثرت إيجاباً"><div class="tags"><span class="tag st">استراتيجية: القراءة الموجهة</span><span class="tag bk">الكتاب</span></div><h2 style="color:var(--mint)">أمثلة على الوظائف التي تأثرت إيجاباً بسبب التقنية</h2><div class="scroll-x"><table class="guide"><tr><th>الوظيفة</th><th>ماذا تفعل؟</th></tr><tr><td><b>مصمم الويب</b><div class="note" dir="ltr" style="text-align:right">Web Designer</div></td><td>يقوم بتصميم مواقع الويب التجارية أو الشخصية.</td></tr><tr><td><b>محلل النظم</b><div class="note" dir="ltr" style="text-align:right">System Analyst</div></td><td>يقوم بتطوير نظم المعلومات، منها بحث المشاكل والتخطيط للحلول المناسبة.</td></tr><tr><td><b>مبرمج الحاسب</b><div class="note" dir="ltr" style="text-align:right">Computer Programmer</div></td><td>يقوم ببرمجة الحاسب وبتطوير برمجيات مثل أنظمة التشغيل والتطبيقات وألعاب الحاسب.</td></tr><tr><td><b>مهندس الحاسب</b><div class="note" dir="ltr" style="text-align:right">Computer Engineer</div></td><td>يقوم بالتحكم وتشغيل وصيانة وترقية المكونات المادية للنظم الحاسوبية.</td></tr></table></div></section><section class="slide" data-stage="learn" data-title="وظائف تأثرت سلباً"><div class="tags"><span class="tag st">استراتيجية: القراءة الموجهة</span><span class="tag bk">الكتاب</span></div><h2 style="color:var(--berry)">أمثلة على الوظائف التي تأثرت سلباً بسبب التقنية</h2><div class="scroll-x"><table class="guide"><tr><th>الوظيفة</th><th>لماذا تأثرت؟</th></tr><tr><td><b>عامل المتجر</b></td><td>التسوق الإلكتروني قلل من عدد المتاجر.</td></tr><tr><td><b>المحاسب في البنوك</b></td><td>استخدام الصرافات الآلية (ATM) قلل من وجود أمناء صناديق البنوك.</td></tr><tr><td><b>موظف الأعمال المكتبية</b></td><td>الاستغناء عن الموظفين الذين يقومون بالوظائف المكتبية التقليدية وتوظيف آخرين ذوي مهارات حاسوبية بدلاً منهم.</td></tr><tr><td><b>موظف بدالة الهاتف</b></td><td>الاستغناء عن عامل البدالة واستخدام أنظمة الحاسب التي تقوم بإجراء الاتصالات الهاتفية تلقائياً بدلاً منهم.</td></tr><tr><td><b>أمين المكتبة</b></td><td>انتشار الكتب الإلكترونية قلل من الوظائف ذات الصلة بالمكتبات التقليدية.</td></tr></table></div><div class="panel" style="border-top:5px solid var(--sun)"><h3>فكّري</h3><p>أي الآثار الثلاثة (a أو b أو c) ينطبق على كل وظيفة في الجدولين؟</p></div></section><section class="slide" data-stage="learn" data-title="تدريب 2 من الكتاب" data-time="300"><div class="tags"><span class="tag st">استراتيجية: القراءة الفعالة والعمل في مجموعات</span><span class="tag ev">تقويم تكويني</span><span class="tag bk">الكتاب ص61 • تدريب 2</span><span class="tag tm">5 دقائق • مجموعات</span></div><h2>ما العلاقة بين التقنية والمهن المستقبلية؟</h2><div class="book"><span class="ico">ص61</span><p>افتحي الكتاب على <b>تدريب 2 صفحة 61</b>. أكملي الجدول: ضعي علامة <b>(+)</b> أمام المهنة التي تأثرت إيجاباً، وعلامة <b>(-)</b> أمام المهنة التي تأثرت سلباً، ثم اكتبي التفسير.<br>كل مجموعة تتولى ثلاث مهن، ثم تشارك إجابتها مع الصف.</p></div><div class="grid"><div class="panel"><h3>المجموعة 1</h3><p>مصمم الويب • عامل المتجر • المحاسب في البنوك</p></div><div class="panel"><h3>المجموعة 2</h3><p>محلل النظم • مبرمج الحاسب • موظف الأعمال المكتبية</p></div><div class="panel"><h3>المجموعة 3</h3><p>مهندس الحاسب • موظف بدالة الهاتف • أمين المكتبة</p></div></div></section><section class="slide" data-stage="learn" data-title="لنراجع ما تعلمناه اليوم"><div class="tags"><span class="tag st">استراتيجية: الخريطة الذهنية</span></div><h2>لنراجع ما تعلمناه اليوم</h2><div class="grid"><div class="panel pos"><h3>إيجابيات</h3><p>سرعة وكفاءة • تدوين الملاحظات والعصف الذهني • مؤتمرات الفيديو • العمل عن بعد</p></div><div class="panel neg"><h3>تحديات</h3><p>صعوبة التعلم لكبار السن • تشتت الانتباه • سوء الفهم في الرسائل المكتوبة • مشاكل صحية</p></div><div class="panel" style="border-top:5px solid var(--sun)"><h3>ثلاثة آثار</h3><p>إلغاء وظائف • استحداث وظائف • تدريب وتأهيل الموظفين</p></div></div></section><section class="slide" data-stage="close" data-title="لعبة سُلّم الوظائف" data-time="420"><div class="tags"><span class="tag st">استراتيجية: التعلم باللعب والتنافس بين الفرق</span><span class="tag ev">تقويم ختامي</span><span class="tag tm">7 دقائق • فريقان</span></div><h2>سُلّم الوظائف<small>قسّمي الصف إلى فريقين. كل إجابة صحيحة ترفع الفريق درجة على سُلّمه. أول فريق يصل للقمة يفوز!</small></h2><div class="game" data-game="ladder" data-src="q1" data-rungs="5"><div class="qcard"><span class="qn"></span><span class="turn"></span><p class="qt"></p><div class="opts-g"></div><div class="feedback"></div><div><button class="btn next" hidden>التالي</button></div></div><div class="visual"></div></div></section><section class="slide" data-stage="close" data-title="هل صدقت توقعاتكن؟"><div class="tags"><span class="tag st">استراتيجية: المقارنة بين التوقع والحقيقة</span><span class="tag ev">تقويم ختامي</span><span class="tag bk">الكتاب ص61</span></div><h2>هل صدقت توقعاتكن في بداية الحصة؟<small class="cmp-score"></small></h2><div class="scroll-x"><table class="guide" data-compare="cmp1"></table></div></section><section class="slide" data-stage="task" data-title="تحضير للحصة القادمة"><div class="tags"><span class="tag bk">الكتاب ص57</span></div><h2>استعدي للحصة القادمة</h2><div class="book"><span class="ico">ص57</span><p>اقرئي في الكتاب <b>صفحة 57</b> عن موضوع «بالتقنية الحياة أسهل وأفضل» و«التعلم مدى الحياة»، وفكري: <b>ما الأمور التي سهّلتها التقنية في حياتك اليومية؟</b></p></div><p class="lead" style="margin-top:1rem">شاكرة لكن حسن استماعكن 🌷</p></section><script type="application/json" id="q1">[
+{"q":"أي مما يلي من إيجابيات تقنية المعلومات والاتصالات على قطاع الأعمال؟","o":["زادت من سرعة وكفاءة إنجاز الأعمال بشكل كبير","تشتت انتباه الموظفين المكتبيين","حدوث سوء فهم في الرسائل المكتوبة"]},
+{"q":"من الفئة التي ليس من السهل عليها دائماً تعلم التقنيات الجديدة؟","o":["كبار السن","مبرمجو الحاسب","مصممو الويب"]},
+{"q":"العمل عن بعد دون الحاجة للذهاب إلى مكان العمل يعمل على:","o":["توفير الوقت والموارد","زيادة تشتت الانتباه","إلغاء جميع الوظائف"]},
+{"q":"يتسبب الاستخدام المفرط للتقنية في مشاكل صحية مثل:","o":["ضعف الرؤية ومشاكل العضلات والعظام وأمراض القلب","زيادة كفاءة إنجاز الأعمال","تحسين التفاعل بين الموظفين"]},
+{"q":"لماذا قد تسبب رسائل البريد الإلكتروني سوء فهم أكثر من التواصل المباشر؟","o":["لأن التواصل المباشر يتميز دائماً بوضوح التعبير","لأن البريد الإلكتروني أسرع","لأن البريد الإلكتروني لا يصل أبداً"]},
+{"q":"ما الذي يحسّن التفاعل بين الموظفين؟","o":["مؤتمرات الفيديو وغيرها من التقنيات الجديدة للاتصال","الاستخدام المفرط للتقنية","الاستغناء عن الموظفين"]},
+{"q":"أي مما يلي من الآثار الرئيسية الثلاثة لإدخال التقنية إلى قطاع الأعمال؟","o":["استحداث وظائف جديدة بسبب وجود الحاجة للعامل البشري","إلغاء الحاجة لتدريب الموظفين","توقف استخدام الحاسب في العمل"]},
+{"q":"استخدام الصرافات الآلية (ATM) قلّل من وجود أمناء صناديق البنوك. ما المهنة التي تأثرت سلباً؟","o":["المحاسب في البنوك","محلل النظم","مهندس الحاسب"]},
+{"q":"لماذا تأثرت مهنة مصمم الويب إيجاباً بالتقنية؟","o":["لأن الإنترنت أوجد طلباً كبيراً على مصممي الويب الذين يصممون مواقع تجارية وشخصية","لأن التسوق الإلكتروني قلل من عدد المتاجر","لأن الكتب الإلكترونية انتشرت"]},
+{"q":"انتشار الكتب الإلكترونية قلّل من الوظائف ذات الصلة بالمكتبات التقليدية. ما المهنة؟","o":["أمين المكتبة","مبرمج الحاسب","مصمم الويب"]}
+]<\/script><script type="application/json" id="cmp1">[
+{"k":"web","job":"مصمم الويب","v":"+","why":"لقد أوجد الإنترنت طلباً كبيراً على مصممي الويب الذين يقومون بتصميم مواقع ويب تجارية وشخصية."},
+{"k":"shop","job":"عامل المتجر","v":"-","why":"التسوق الإلكتروني قلل من عدد المتاجر."},
+{"k":"bank","job":"المحاسب في البنوك","v":"-","why":"استخدام الصرافات الآلية (ATM) قلل من وجود أمناء صناديق البنوك."},
+{"k":"sa","job":"محلل النظم","v":"+","why":"يقوم بتطوير نظم المعلومات، منها بحث المشاكل والتخطيط للحلول المناسبة."},
+{"k":"prog","job":"مبرمج الحاسب","v":"+","why":"يقوم بتطوير برمجيات مثل أنظمة التشغيل والتطبيقات وألعاب الحاسب."},
+{"k":"office","job":"موظف الأعمال المكتبية","v":"-","why":"الاستغناء عن الموظفين الذين يقومون بالوظائف المكتبية التقليدية وتوظيف آخرين ذوي مهارات حاسوبية بدلاً منهم."},
+{"k":"eng","job":"مهندس الحاسب","v":"+","why":"هناك حاجة للمهندسين لاختراع أجهزة حاسب عالية التقنية تستخدم اليوم."},
+{"k":"tel","job":"موظف بدالة الهاتف","v":"-","why":"الاستغناء عن عامل البدالة واستخدام أنظمة الحاسب التي تقوم بإجراء الاتصالات الهاتفية تلقائياً بدلاً منهم."},
+{"k":"lib","job":"أمين المكتبة","v":"-","why":"انتشار الكتب الإلكترونية قلل من الوظائف ذات الصلة بالمكتبات التقليدية."}
+]<\/script>
+</main><footer class="bar"><div class="nav"><button class="btn" data-nav="prev">→ السابق</button><button class="btn" data-nav="next">التالي ←</button></div><span class="count"></span><span class="title"></span><div class="timer" hidden><span class="t">00:00</span><button class="iconbtn">ابدئي المؤقت</button></div><button class="iconbtn" data-fs>ملء الشاشة</button></footer></div></script><script type="text/plain" id="t1"><div class="app"><header class="rail"><span class="course"><b>تقنية رقمية 1-1</b> • الدرس الخامس: تقنية المعلومات والاتصالات والمجتمع • الحصة الثانية من ثلاث</span><nav class="stages"></nav></header><main class="deck"><div class="prog"><i></i></div>
+
+
+<section class="slide cover" data-stage="review" data-title="الغلاف"><span class="kicker">الحصة الثانية من ثلاث حصص</span><h1>تقنية المعلومات والاتصالات والمجتمع</h1><div class="meta"><span>الدرس الخامس</span><span>الوحدة الأولى: أساسيات علم الحاسب</span><span>الكتاب ص57</span></div><div class="plan"><span>مراجعة: الصناديق الغامضة</span><span>نشاط: قبل وبعد</span><span>الأهداف</span><span>الشرح</span><span>لعبة المحفظة الرقمية</span></div></section><section class="slide" data-stage="review" data-title="مراجعة: الصناديق الغامضة" data-time="300"><div class="tags"><span class="tag st">استراتيجية: الصناديق الغامضة (الاختيار العشوائي)</span><span class="tag ev">تقويم تشخيصي</span><span class="tag tm">5 دقائق • فردي</span></div><h2>مراجعة الحصة السابقة<small>تختار الطالبة رقم صندوق، فيظهر سؤال عن الحصة الأولى</small></h2><div class="boxes" data-src="mb2" data-out="mb2-out"></div><div class="stagebox" id="mb2-out" hidden></div></section><section class="slide" data-stage="warm" data-title="نشاط تمهيدي: قبل وبعد" data-time="180"><div class="tags"><span class="tag st">استراتيجية: التوقع والاستنتاج</span><span class="tag ev">تقويم تشخيصي</span><span class="tag tm">3 دقائق • جماعي</span></div><h2>قبل التقنية.. وبعدها!<small>اقرئي الموقف، وتوقعي كيف أصبح بعد التقنية، ثم اقلبي البطاقة</small></h2><div class="grid two"><button class="flip"><div class="in"><div class="f"><small>🛒 قبل</small><span class="q">أحتاج شراء غرض.. كيف أشتريه اليوم؟</span></div><div class="b"><small>بعد التقنية</small>التسوق من منازلنا، كما أنها تعرض أسعاراً أفضل في كثير من الأحوال</div></div></button><button class="flip"><div class="in"><div class="f"><small>🎓 قبل</small><span class="q">أريد حضور دورة لمحاضر مشهور في مدينة بعيدة..</span></div><div class="b"><small>بعد التقنية</small>أضحى بالإمكان حضور الدورات التدريبية عبر الإنترنت ومشاهدة المدرسين والمحاضرين</div></div></button><button class="flip"><div class="in"><div class="f"><small>🎮 قبل</small><span class="q">ألعب ألعاب الفيديو.. مع من؟</span></div><div class="b"><small>بعد التقنية</small>اللعب التشاركي عبر الإنترنت مع أشخاص حقيقيين آخرين حول العالم</div></div></button><button class="flip"><div class="in"><div class="f"><small>💳 قبل</small><span class="q">أريد دفع ثمن مشترياتي.. كيف؟</span></div><div class="b"><small>بعد التقنية</small>طرق دفع جديدة عبر الإنترنت توفر راحة وسهولة في الدفع</div></div></button></div></section><section class="slide" data-stage="goals" data-title="عنوان الدرس وأهداف الحصة"><span class="note">الدرس الخامس • الحصة الثانية</span><h1 class="lesson-title">تقنية المعلومات والاتصالات والمجتمع</h1><h2 style="font-size:1.3em">أهداف الحصة الثانية</h2><ol class="goals"><li>توضيح كيف أصبحت الحياة بالتقنية أسهل وأفضل.</li><li>معرفة مفهوم التعلم مدى الحياة ومتطلباته.</li><li>معرفة تطور عمليات دفع الأموال.</li></ol></section><section class="slide" data-stage="learn" data-title="بالتقنية الحياة أسهل وأفضل"><div class="tags"><span class="tag st">استراتيجية: العرض المباشر</span><span class="tag bk">الكتاب ص57</span></div><h2>بالتقنية الحياة أسهل وأفضل</h2><p class="lead">مع توفر المزيد من التقنيات الجديدة وتطورها وتطور الإنترنت غيّرت حياتنا للأفضل وسهّلت عدة أمور منها:</p><div class="grid"><div class="panel"><h3>🛒 منصات التجارة الإلكترونية</h3><p>نتسوق من منازلنا بأسعار أفضل في كثير من الأحوال.</p></div><div class="panel"><h3>🎓 منصات التعليم الإلكتروني</h3><p>نحضر الدورات التدريبية عبر الإنترنت في أي وقت.</p></div><div class="panel"><h3>🎮 ألعاب الفيديو</h3><p>ألعاب تعليمية وترفيهية تشحذ العقل وتنمي التفكير المنطقي.</p></div></div><p class="note">سنتعرف على كل مجال بالتفصيل في الصفحات التالية.</p></section><section class="slide" data-stage="learn" data-title="منصات التجارة الإلكترونية"><div class="tags"><span class="tag st">استراتيجية: الربط بالواقع</span><span class="tag bk">الكتاب ص57</span></div><h2>🛒 منصات التجارة الإلكترونية</h2><p class="lead">تتيح لنا منصات التجارة الإلكترونية التسوق من منازلنا، كما أنها تعرض أسعاراً أفضل في كثير من الأحوال.</p><h3 style="font-size:1.1em">من أمثلة منصات التجارة الإلكترونية</h3><div class="grid" dir="ltr" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr))"><div class="panel"><h3>Shopify</h3></div><div class="panel"><h3>BigCommerce</h3></div><div class="panel"><h3>Magento</h3></div><div class="panel"><h3>CS-Cart</h3></div><div class="panel"><h3>WooCommerce</h3></div><div class="panel"><h3>PrestaShop</h3></div><div class="panel"><h3>Zen Cart</h3></div><div class="panel"><h3>OpenCart</h3></div></div><div class="panel" style="border-top:5px solid var(--sun)"><h3>اذكري أمثلة؟</h3><p>ما المتجر الإلكتروني الذي اشترت منه أسرتك مؤخراً؟ وما الميزة التي جعلتكم تفضلونه؟</p></div></section><section class="slide" data-stage="learn" data-title="منصات التعليم الإلكتروني"><div class="tags"><span class="tag st">استراتيجية: القراءة الفعالة</span><span class="tag bk">الكتاب ص57</span></div><h2>🎓 منصات التعليم الإلكتروني</h2><p class="lead">مع تطور تقنية مؤتمرات الفيديو المنخفضة التكلفة، حيث أصبحت منصات التعليم الإلكتروني توفر إمكان التعلم، أضحى بالإمكان حضور الدورات التدريبية عبر الإنترنت ومشاهدة المدرسين والمحاضرين يقدمون المحاضرات حول الكثير من الموضوعات.</p><div class="grid two"><div class="panel pos"><h3>فرصة عظيمة</h3><p>يعد أيضاً فرصة عظيمة للأشخاص الذين لا يستطيعون دفع تكاليف تعليمهم.</p></div><div class="panel pos"><h3>مزايا أخرى</h3><p>يقدم أيضاً مزايا أخرى مثل الحصول على المعلومات في أي وقت، ومواصلة الموظفين تعلمهم.</p></div></div><div class="book"><span class="ico">ص57</span><p>أكملي من كتابك قائمة المزايا الأخرى للتعليم الإلكتروني.</p></div></section><section class="slide" data-stage="learn" data-title="ألعاب الفيديو"><div class="tags"><span class="tag st">استراتيجية: الحوار والمناقشة</span><span class="tag bk">الكتاب ص57</span></div><h2>🎮 ألعاب الفيديو</h2><p class="lead">تضفي ألعاب الفيديو تأثيراً تقنياً إيجابياً على حياتنا أيضاً؛ فبفضل التطور في أنظمة الحاسب ظهرت الكثير من الألعاب التعليمية والترفيهية التي تشحذ العقل وتنمي التفكير المنطقي.</p><div class="grid two"><div class="panel pos"><h3>اللعب التشاركي</h3><p>تتجه الكثير من ألعاب الفيديو بشكل متزايد إلى اللعب التشاركي مع أفراد آخرين عبر الإنترنت مع أشخاص حقيقيين آخرين بدلاً من الحاسب، والذي يوفر فرص التواصل الاجتماعي ومشاركة الأنشطة مع ذوي اهتمامات مشتركة حول العالم.</p></div><div class="panel neg"><h3>الاعتدال مهم!</h3><p>لا يخفى أن الاعتدال يعد أمراً مهماً فيما يتعلق بألعاب الفيديو؛ لأنه من السهل جداً الاندماج في لعبة معينة وإدمان العالم الرقمي.</p></div></div><div class="panel" style="border-top:5px solid var(--sun)"><h3>ناقشي</h3><p>اذكري لعبة تعليمية تنمي التفكير المنطقي.. وكم ساعة ترين أنها مناسبة للعب يومياً؟</p></div></section><section class="slide" data-stage="learn" data-title="منصات التعلم عبر الإنترنت"><div class="tags"><span class="tag st">استراتيجية: التعلم بالأمثلة الواقعية</span></div><h2>منصات تقدم دورات عبر الإنترنت</h2><div class="grid"><div class="panel"><h3>منصة رواق</h3><p dir="ltr" style="text-align:right">www.rwaq.org</p></div><div class="panel"><h3>منصة إثرائي</h3><p dir="ltr" style="text-align:right">ethrai.sa</p></div><div class="panel"><h3>منصة دروب</h3><p dir="ltr" style="text-align:right">doroob.sa</p></div></div><div class="panel" style="border-top:5px solid var(--sun)"><h3>حدّثيني عن ذلك!!</h3><p>هل جرّبتِ إحدى هذه المنصات؟ أو تعلّمتِ مهارة جديدة عبر الإنترنت؟ شاركي زميلتك بجانبك ثم الصف.</p></div></section><section class="slide" data-stage="learn" data-title="نشاط من الكتاب: حدّدي المجال" data-time="120"><div class="tags"><span class="tag st">استراتيجية: القراءة الفعالة</span><span class="tag ev">تقويم تكويني</span><span class="tag bk">الكتاب ص57</span><span class="tag tm">دقيقتان • فردي</span></div><h2>اقرئي ص57 وضعي المصطلح المناسب</h2><div class="book"><span class="ico">ص57</span><p>اقرئي فقرات «بالتقنية الحياة أسهل وأفضل» في كتابك، ثم اكتبي في دفترك: <b>ما المجال الذي تصفه كل عبارة؟</b></p></div><div class="grid"><button class="flip"><div class="in"><div class="f"><small>العبارة 1</small><span class="q">«... تشحذ العقل وتنمي التفكير المنطقي»</span></div><div class="b"><small>المجال</small>ألعاب الفيديو</div></div></button><button class="flip"><div class="in"><div class="f"><small>العبارة 2</small><span class="q">«... فرصة عظيمة للأشخاص الذين لا يستطيعون دفع تكاليف تعليمهم»</span></div><div class="b"><small>المجال</small>التعليم (الدورات عبر الإنترنت)</div></div></button><button class="flip"><div class="in"><div class="f"><small>العبارة 3</small><span class="q">«... من منازلنا، كما أنها تعرض أسعاراً أفضل»</span></div><div class="b"><small>المجال</small>التسوق</div></div></button></div></section><section class="slide" data-stage="learn" data-title="التعلم مدى الحياة"><div class="tags"><span class="tag st">استراتيجية: العرض المباشر</span><span class="tag bk">الكتاب ص57</span></div><h2>التعلم مدى الحياة<small>هذا النوع من التعلم يساعدنا على إتقان عملنا</small></h2><div class="grid two"><div class="panel"><h3>التحفيز الذاتي</h3><p>التعلم مدى الحياة يتطلب التحفيز الذاتي، إذ يجب أن تشعر بالرضا عن التعلم وعن قدرتك على التعلم.</p></div><div class="panel"><h3>مصادر متنوعة</h3><p>يتطلب التعلم الفعال أن تحصل على المعلومات من خلال القراءة والاستماع والمراقبة والممارسة والتجربة والخبرة.</p></div><div class="panel"><h3>البحث</h3><p>يكون التعلم ناجحاً عندما تتمكن من البحث عن المعلومات التي تكتسبها.</p></div><div class="panel"><h3>التدوين والممارسة</h3><p>تدوين الملاحظات والممارسة، ومناقشة وتجربة الأفكار والمهارات الجديدة لمساعدتك على التعلم والتطوير.</p></div><div class="panel"><h3>التفكير في تعلمك</h3><p>يتطلب التفكير في التعلم الخاص بك: فكّر كيف ولماذا تعلمت، وما شعرت به حول موضوع معين أو موقف معين قبل التعلم وبعده.</p></div><div class="panel"><h3>فحص المعرفة</h3><p>يتطلب فحص معرفتك بانتظام للمساعدة على تعزيز ما تعلمته في ذهنك، وأن تحاول دائماً الحفاظ على الانفتاح الذهني، وأن تسأل عمّا تفهمه، وأن تكون منفتحاً على المعلومات الجديدة.</p></div></div><div class="book"><span class="ico">ص57</span><p>اقرئي في الكتاب <b>صفحة 57</b> وعرّفي <b>التعلم مدى الحياة</b> بأسلوبك في كتابك.</p></div></section><section class="slide" data-stage="learn" data-title="نشاط: أكملي الفراغ" data-time="120"><div class="tags"><span class="tag st">استراتيجية: بنك الكلمات</span><span class="tag ev">تقويم تكويني</span><span class="tag tm">دقيقتان • فردي</span></div><h2>أكملي متطلبات التعلم مدى الحياة<small>اضغطي على الفراغ، ثم على الكلمة المناسبة من البنك</small></h2><div class="fill"><p>• يتطلب <span class="blank" data-a="التحفيز"></span> الذاتي والشعور بالرضا.</p><p>• القراءة والاستماع والمراقبة و<span class="blank" data-a="الممارسة"></span> والتجربة.</p><p>• تدوين <span class="blank" data-a="الملاحظات"></span> ومناقشة وتجربة الأفكار والمهارات الجديدة.</p><p>• فحص <span class="blank" data-a="معرفتك"></span> باستمرار للمساعدة على تعزيز ما تعلمته في ذهنك والمحافظة على <span class="blank" data-a="الانفتاح الذهني"></span>.</p><div class="bank" style="margin-top:1rem"><button class="chip">الملاحظات</button><button class="chip">الانفتاح الذهني</button><button class="chip">التحفيز</button><button class="chip">معرفتك</button><button class="chip">الممارسة</button></div></div></section><section class="slide" data-stage="learn" data-title="تطور عمليات دفع الأموال"><div class="tags"><span class="tag st">استراتيجية: فكّري، زاوجي، شاركي</span><span class="tag ev">تقويم تكويني</span></div><h2>تطور عمليات دفع الأموال</h2><p class="lead">مع التطور في التقنية وفّر مصدراً مهماً لاعتماد طرق دفع جديدة عبر الإنترنت، فأصبحت توفر راحة وسهولة في الدفع. فيمكن للمستهلكين استخدام وسائل دفع جديدة في التطبيقات التي يستخدمونها لسداد تكاليف الشراء.</p><div class="answer"><b>طرق الدفع الإلكترونية</b> توفر راحة وسهولة في الدفع لجميع الأطراف.</div><div class="panel"><h3>اذكري أمثلة؟</h3><p>فكّري وحدك دقيقة، ثم ناقشي زميلتك، ثم شاركي الصف.</p><div style="margin-top:.6rem"><button class="btn soft" data-reveal="pay-ex" data-l1="أظهري أمثلة من العرض">أظهري أمثلة من العرض</button></div><div class="grid" id="pay-ex" hidden style="margin-top:.6rem"><div class="panel"><h3 dir="ltr" style="text-align:right">stc pay</h3></div><div class="panel"><h3 dir="ltr" style="text-align:right">Bayan Pay</h3></div><div class="panel"><h3 dir="ltr" style="text-align:right">Ripple</h3></div></div></div></section><section class="slide" data-stage="learn" data-title="لنراجع ما تعلمناه اليوم"><div class="tags"><span class="tag st">استراتيجية: الخريطة الذهنية</span></div><h2>لنراجع ما تعلمناه اليوم</h2><div class="grid"><div class="panel"><h3>بالتقنية الحياة أسهل وأفضل</h3><p>التسوق • التعليم عبر الإنترنت • ألعاب الفيديو باعتدال</p></div><div class="panel"><h3>التعلم مدى الحياة</h3><p>تحفيز ذاتي • قراءة وممارسة • تدوين ملاحظات • فحص المعرفة باستمرار</p></div><div class="panel"><h3>تطور عمليات دفع الأموال</h3><p>طرق دفع إلكترونية توفر راحة وسهولة لجميع الأطراف</p></div></div></section><section class="slide" data-stage="close" data-title="لعبة المحفظة الرقمية" data-time="420"><div class="tags"><span class="tag st">استراتيجية: التعلم باللعب (تحدي الصف)</span><span class="tag ev">تقويم ختامي</span><span class="tag tm">7 دقائق • الصف كاملاً</span></div><h2>المحفظة الرقمية<small>كل إجابة صحيحة تودع 10 ريالات في محفظة الصف. هل نصل إلى 100 ريال؟ اختاري طالبة مختلفة لكل سؤال.</small></h2><div class="game" data-game="wallet" data-src="q2" data-goal="10"><div class="qcard"><span class="qn"></span><span class="turn"></span><p class="qt"></p><div class="opts-g"></div><div class="feedback"></div><div><button class="btn next" hidden>التالي</button></div></div><div class="visual"></div></div></section><section class="slide" data-stage="task" data-title="تحضير للحصة القادمة"><div class="tags"><span class="tag bk">الكتاب ص58</span></div><h2>استعدي للحصة القادمة</h2><div class="book"><span class="ico">ص58</span><p>اقرئي في الكتاب ابتداءً من <b>صفحة 58</b> عن «التخزين السحابي» و«الفجوة الرقمية»، وفكّري: <b>هل توجد طرق لحفظ البيانات على الإنترنت؟ ما هي؟</b></p></div><p class="lead" style="margin-top:1rem">شاكرة لكن حسن استماعكن 🌷</p></section><script type="application/json" id="mb2">[
+{"q":"اذكري إيجابية واحدة لتقنية المعلومات والاتصالات على قطاع الأعمال.","a":"زادت من سرعة وكفاءة إنجاز الأعمال • تدوين الملاحظات والعصف الذهني أسهل • مؤتمرات الفيديو تحسن التفاعل بين الموظفين • العمل عن بعد يوفر الوقت والموارد"},
+{"q":"اذكري تحدياً واحداً لتقنية المعلومات والاتصالات في قطاع الأعمال.","a":"صعوبة تعلم التقنيات الجديدة لكبار السن • تشتت انتباه الموظفين • سوء الفهم في الرسائل المكتوبة • مشاكل صحية بسبب الاستخدام المفرط"},
+{"q":"ما الآثار الرئيسية الثلاثة لإدخال التقنية إلى قطاع الأعمال؟","a":"إلغاء بعض الوظائف والاستغناء عن العاملين بها • استحداث وظائف جديدة بسبب وجود الحاجة للعامل البشري • الحاجة لتدريب وتأهيل الموظفين ليكونوا قادرين على استخدام التقنية"},
+{"q":"اذكري مهنة تأثرت إيجاباً بالتقنية مع التفسير.","a":"مثل: مبرمج الحاسب، يقوم بتطوير برمجيات مثل أنظمة التشغيل والتطبيقات وألعاب الحاسب"},
+{"q":"اذكري مهنة تأثرت سلباً بالتقنية مع التفسير.","a":"مثل: موظف بدالة الهاتف، الاستغناء عن عامل البدالة واستخدام أنظمة الحاسب التي تجري الاتصالات الهاتفية تلقائياً"},
+{"q":"ما المشاكل الصحية التي يسببها الاستخدام المفرط للتقنية؟","a":"ضعف الرؤية ومشاكل العضلات والعظام وأمراض القلب"}
+]<\/script><script type="application/json" id="q2">[
+{"q":"مع التسوق عبر الإنترنت أصبح بإمكاننا:","o":["التسوق من منازلنا بأسعار أفضل في كثير من الأحوال","الشراء من المتاجر فقط","دفع ثمن أعلى دائماً"]},
+{"q":"أي مما يلي منصة تقدم دورات تدريبية عبر الإنترنت؟","o":["رواق","stc pay","Bayan Pay"]},
+{"q":"حضور الدورات عبر الإنترنت فرصة عظيمة لـ:","o":["الأشخاص الذين لا يستطيعون دفع تكاليف تعليمهم","من لا يملكون وقتاً للعب فقط","الشركات فقط"]},
+{"q":"الألعاب التعليمية والترفيهية:","o":["تشحذ العقل وتنمي التفكير المنطقي","تمنع التواصل الاجتماعي دائماً","لا علاقة لها بالتقنية"]},
+{"q":"لماذا يعد الاعتدال مهماً في ألعاب الفيديو؟","o":["لأنه من السهل الاندماج في لعبة معينة وإدمان العالم الرقمي","لأن الألعاب لا تنمي التفكير","لأن اللعب عبر الإنترنت ممنوع"]},
+{"q":"التعلم مدى الحياة يساعدنا على:","o":["إتقان عملنا","ترك العمل","الاستغناء عن القراءة"]},
+{"q":"من متطلبات التعلم مدى الحياة:","o":["التحفيز الذاتي والشعور بالرضا","الحفظ دون فهم","التوقف بعد التخرج"]},
+{"q":"فحص معرفتك باستمرار يساعد على:","o":["تعزيز ما تعلمته في ذهنك والمحافظة على الانفتاح الذهني","نسيان المعلومات","الاكتفاء بما تعلمته"]},
+{"q":"طرق الدفع الإلكترونية توفر:","o":["راحة وسهولة في الدفع لجميع الأطراف","صعوبة في سداد تكاليف الشراء","الدفع نقداً فقط"]},
+{"q":"أي مما يلي مثال على وسيلة دفع إلكترونية؟","o":["stc pay","منصة دروب","منصة إثرائي"]}
+]<\/script>
+</main><footer class="bar"><div class="nav"><button class="btn" data-nav="prev">→ السابق</button><button class="btn" data-nav="next">التالي ←</button></div><span class="count"></span><span class="title"></span><div class="timer" hidden><span class="t">00:00</span><button class="iconbtn">ابدئي المؤقت</button></div><button class="iconbtn" data-fs>ملء الشاشة</button></footer></div></script><script type="text/plain" id="t2"><div class="app"><header class="rail"><span class="course"><b>تقنية رقمية 1-1</b> • الدرس الخامس: تقنية المعلومات والاتصالات والمجتمع • الحصة الثالثة من ثلاث</span><nav class="stages"></nav></header><main class="deck"><div class="prog"><i></i></div>
+
+
+<section class="slide cover" data-stage="review" data-title="الغلاف"><span class="kicker">الحصة الثالثة من ثلاث حصص</span><h1>تقنية المعلومات والاتصالات والمجتمع</h1><div class="meta"><span>تابع الدرس الخامس</span><span>الوحدة الأولى: أساسيات علم الحاسب</span><span>الكتاب ص58</span></div><div class="plan"><span>مراجعة: عجلة الأسئلة</span><span>نشاط: أوافق أم لا أوافق؟</span><span>الأهداف</span><span>الشرح</span><span>لعبة جسر الفجوة</span></div></section><section class="slide" data-stage="review" data-title="مراجعة: عجلة الأسئلة" data-time="300"><div class="tags"><span class="tag st">استراتيجية: العجلة الدوارة (الاختيار العشوائي)</span><span class="tag ev">تقويم تشخيصي</span><span class="tag tm">5 دقائق • فردي</span></div><h2>مراجعة الحصة السابقة<small>أديري العجلة، وتجيب الطالبة عن السؤال الذي يظهر</small></h2><div class="wheel-wrap" data-wheel="wh3"><div class="wheel-box"><div class="pin"></div><div class="wheel"></div></div><div style="flex:1;min-width:min(100%,18rem);display:flex;flex-direction:column;gap:1rem"><div><button class="btn" data-spin>أديري العجلة</button></div><div class="stagebox" hidden></div></div></div></section><section class="slide" data-stage="warm" data-title="نشاط تمهيدي: أوافق أم لا أوافق؟" data-time="180"><div class="tags"><span class="tag st">استراتيجية: دليل الترقب</span><span class="tag ev">تقويم تشخيصي</span><span class="tag tm">3 دقائق • جماعي</span></div><h2>أوافق أم لا أوافق؟<small>صوّتي برفع اليد، وسجّلي رأي أغلبية الصف. سنعود لهذه العبارات في نهاية الحصة!</small></h2><div class="scroll-x"><table class="guide"><tr><th>العبارة</th><th>رأي الصف</th></tr><tr><td>كل شخص لديه إمكانية استخدام أجهزة الحاسب والإنترنت والاستفادة من التقنية.</td><td><div class="yn" data-k="g1"><button data-v="y">أوافق</button><button data-v="n">لا أوافق</button></div></td></tr><tr><td>توجد طرق لحفظ نسخة احتياطية من ملفاتي على الإنترنت.</td><td><div class="yn" data-k="g2"><button data-v="y">أوافق</button><button data-v="n">لا أوافق</button></div></td></tr><tr><td>عدم مشاركة ملفاتي على الإنترنت يكفي لحماية خصوصيتي.</td><td><div class="yn" data-k="g3"><button data-v="y">أوافق</button><button data-v="n">لا أوافق</button></div></td></tr><tr><td>ينقسم المجتمع إلى فئتين فقط: فئة قادرة على استخدام التقنية وأخرى غير قادرة.</td><td><div class="yn" data-k="g4"><button data-v="y">أوافق</button><button data-v="n">لا أوافق</button></div></td></tr><tr><td>اللغة تؤثر في كمّ وجودة المعلومات التي أصل إليها عبر الإنترنت.</td><td><div class="yn" data-k="g5"><button data-v="y">أوافق</button><button data-v="n">لا أوافق</button></div></td></tr></table></div></section><section class="slide" data-stage="goals" data-title="عنوان الدرس وأهداف الحصة"><span class="note">الدرس الخامس • الحصة الثالثة</span><h1 class="lesson-title">تقنية المعلومات والاتصالات والمجتمع</h1><h2 style="font-size:1.3em">أهداف الحصة الثالثة</h2><ol class="goals"><li>التعرف على خدمة التخزين السحابي.</li><li>معرفة مفهوم الفجوة الرقمية.</li><li>معرفة العوامل المؤثرة على الفجوة الرقمية.</li></ol></section><section class="slide" data-stage="learn" data-title="ما هو التخزين السحابي؟"><div class="tags"><span class="tag st">استراتيجية: الاستنتاج والعرض المباشر</span><span class="tag bk">الكتاب ص58</span></div><h2>ما هو التخزين السحابي؟</h2><div class="panel" style="border-top:5px solid var(--sun)"><h3>استنتجي أولاً ☁️</h3><p>لماذا برأيك سُمّيت هذه الخدمة «سحابية»؟ ناقشي زميلتك ثم شاركي الصف.</p></div><div class="answer" style="font-size:1.15em">هي خدمة تتيح الاحتفاظ بنسخة احتياطية من ملفاتك على الإنترنت.</div><p>تتيح خدمات التخزين السحابي الاحتفاظ بنسخ احتياطية من الملفات عبر الإنترنت والوصول إليها بمجرد الاتصال بالإنترنت.</p><h3 style="font-size:1.2em">أمثلة لمقدّمي خدمة التخزين السحابي</h3><div class="grid" dir="ltr" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr))"><div class="panel"><h3>Google Drive</h3></div><div class="panel"><h3>Dropbox</h3></div><div class="panel"><h3>OneDrive</h3></div><div class="panel"><h3>iCloud</h3></div><div class="panel"><h3>pCloud</h3></div><div class="panel"><h3>IDrive</h3></div><div class="panel"><h3>MEGA</h3></div><div class="panel"><h3>Firefox Send</h3></div></div></section><section class="slide" data-stage="learn" data-title="التخزين السحابي والخصوصية" data-time="180"><div class="tags"><span class="tag st">استراتيجية: الحوار والمناقشة + القراءة الفعالة</span><span class="tag ev">تقويم تكويني</span><span class="tag bk">الكتاب</span><span class="tag tm">3 دقائق</span></div><h2>يعتقد الكثيرون بأن عدم مشاركتهم لملفاتهم على الإنترنت كافٍ لحماية خصوصيتهم.. ما رأيك؟</h2><p class="lead">يعتقد الكثيرون أن عدم مشاركتهم على الإنترنت وتجنب إتاحة المحتوى للجمهور يكفيان لحماية خصوصيتهم على الإنترنت.. لكن:</p><div class="grid two"><div class="panel neg"><p>عند استخدام الخدمات السحابية تصبح ملفاتك الشخصية بحوزة الشركات الخاصة بالاستضافة السحابية، وتعتمد على التزام هذه الشركات بعدم الاطلاع على ملفاتك الشخصية.</p></div><div class="panel neg"><p>العديد من كبار مزودي خدمات التخزين السحابي يتفحصون ملفاتك تلقائياً لاكتشاف أي محتوى غير قانوني، وذلك لإزالتها أو حتى لإبلاغ السلطات.</p></div></div><div class="book"><span class="ico">الكتاب</span><p>اقرئي فقرة الخصوصية في الكتاب، وأكملي: عند استخدامك للتخزين السحابي يُنصح أن ........................ وأن ........................</p></div><div><button class="btn soft" data-reveal="priv-a">أظهري الإجابة</button></div><div class="answer" id="priv-a" hidden>تتجنب تحميل أي معلومات شخصية حساسة، وأن تحتفظ دائماً بنسخة احتياطية.</div></section><section class="slide" data-stage="learn" data-title="ما الفجوة الرقمية؟"><div class="tags"><span class="tag st">استراتيجية: العرض المباشر</span><span class="tag bk">الكتاب</span></div><h2>ما الفجوة الرقمية؟</h2><div class="answer" style="font-size:1.15em">هي التفاوت في مقدار المعلومات والمهارات بين من يملك إمكانية الوصول للحاسبات والإنترنت ومن ليس لديه إمكانية الوصول لذلك.</div><p class="lead">تعد الفجوة الرقمية أو التقنية <b style="color:var(--berry)">مشكلة اجتماعية</b>.</p><div class="panel"><h3>من الخطأ تقسيم المجتمع إلى فئتين فقط!</h3><p>من الخطأ تقسيم المجتمع حسب مفهوم الفجوة الرقمية إلى فئتين (فئة قادرة على استخدام التقنية وأخرى غير قادرة)، وإنما تتفاوت فئات المجتمع في قدرتها على الاستفادة من التقنية المتاحة، وذلك بحسب ما يلي:</p><div class="grid" style="margin-top:.7rem"><div class="panel"><p>وجود الحاسبات ذات الأداء أو الجودة المنخفضة</p></div><div class="panel"><p>رداءة شبكات الاتصالات أو ارتفاع تكلفتها</p></div><div class="panel"><p>صعوبة الحصول على التدريب والتعليم التقني والدعم</p></div></div></div></section><section class="slide" data-stage="learn" data-title="العوامل المؤثرة على الفجوة الرقمية"><div class="tags"><span class="tag st">استراتيجية: الاستكشاف (اضغطي على كل عامل)</span><span class="tag bk">الكتاب</span></div><h2>العوامل المؤثرة على الفجوة الرقمية<small>ست عوامل.. اضغطي على كل عامل لتكتشفي تفاصيله</small></h2><div class="tiles"><button class="tile" data-x><span class="h"><i>01</i>المستوى الاقتصادي</span><span class="d" hidden>لدى المجتمعات الأكثر ثراءً فرص أفضل في تبني تقنيات جديدة مقارنة بالمجتمعات الفقيرة. ومن الشائع أيضاً أن تتوافر في المناطق العامة في المجتمعات الغنية بنية تحتية مجانية للوصول إلى الإنترنت على عكس المناطق الفقيرة حيث تزداد الحاجة إليها هناك أكثر.</span></button><button class="tile" data-x><span class="h"><i>02</i>التعليم</span><span class="d" hidden>تشير الدراسات إلى أن أولئك الحاصلين على شهادة جامعية يستطيعون الوصول إلى الإنترنت بمقدار 10 أضعاف مقارنة بالحاصلين على التعليم الثانوي فقط.</span></button><button class="tile" data-x><span class="h"><i>03</i>الموقع الجغرافي</span><span class="d" hidden>تتوفر أجهزة الحاسب للأسر التي تعيش في المناطق الحضرية وضواحيها في منازلهم بنسبة تتجاوز عشرة أضعاف توفرها لدى الأسر الموجودة في المناطق الريفية. ويمكن التغلب على هذه المسألة من خلال الحلول البديلة كاستخدام خطوط الكهرباء والاتصالات عبر الأقمار الاصطناعية التي أصبحت توفر الآن إمكانات جديدة للوصول إلى الإنترنت دون الحاجة إلى إنشاء خطوط هاتفية.</span></button><button class="tile" data-x><span class="h"><i>04</i>الاحتياجات الخاصة</span><span class="d" hidden>قد تتوفر التقنية الحديثة لبعض الأشخاص، ولكن وجود إعاقة من نوع ما قد تمنعهم من استخدام هذه التقنية بشكل كامل. ووفقاً للأبحاث فإن حوالي 15% من التعداد السكاني للعالم يعيشون بنوع من الإعاقة، ويجد 2% إلى 4% صعوبة واضحة في أداء نشاطاتهم اليومية بشكل مستقل.</span></button><button class="tile" data-x><span class="h"><i>05</i>العمر</span><span class="d" hidden>يعد معظم كبار السن بعيدين نوعاً ما عن التقنية مقارنة بالأجيال الشابة، كما أنهم يحتاجون إلى بعض التدريب والتأهيل وذلك من خلال أفراد الأسرة وباستخدام أدوات تسهل عليهم التعامل مع التقنية.</span></button><button class="tile" data-x><span class="h"><i>06</i>اللغة</span><span class="d" hidden>تؤثر اللغة بشكل مباشر في تجربة المستخدم في التعامل مع الإنترنت، فهي تحكم كمّ وجودة المعلومات التي يمكنه الوصول إليها، والمجتمعات التي يمكنه التواصل معها. مثلاً قد يعطيك بحث Google معلومات محددة بلغة معينة أكثر بعشرة أضعاف مما قد تحصل عليه عند البحث بلغة أخرى.</span></button></div></section><section class="slide" data-stage="learn" data-title="نشاط: صِلي العامل بالدليل" data-time="180"><div class="tags"><span class="tag st">استراتيجية: المطابقة في مجموعات</span><span class="tag ev">تقويم تكويني</span><span class="tag tm">3 دقائق • مجموعات</span></div><h2>صِلي العامل بالدليل<small>اضغطي على العامل ثم على الدليل المناسب له • المطابقات الصحيحة: <span class="score">0 / 6</span></small></h2><div class="match"><div class="col a"><button class="chip" data-k="1">المستوى الاقتصادي</button><button class="chip" data-k="2">التعليم</button><button class="chip" data-k="3">الموقع الجغرافي</button><button class="chip" data-k="4">الاحتياجات الخاصة</button><button class="chip" data-k="5">العمر</button><button class="chip" data-k="6">اللغة</button></div><div class="col b"><button class="chip" data-k="5">يحتاجون التدريب والتأهيل من خلال أفراد الأسرة</button><button class="chip" data-k="3">الحضر أكثر من الريف بعشرة أضعاف في توفر الحاسب</button><button class="chip" data-k="6">بحث Google قد يعطي معلومات أكثر بعشرة أضعاف حسب لغة البحث</button><button class="chip" data-k="1">بنية تحتية مجانية للإنترنت في المناطق العامة بالمجتمعات الغنية</button><button class="chip" data-k="4">حوالي 15% من سكان العالم يعيشون بنوع من الإعاقة</button><button class="chip" data-k="2">الجامعيون يصلون للإنترنت بمقدار 10 أضعاف</button></div></div></section><section class="slide" data-stage="learn" data-title="ما الذي يمكن فعله لسد الفجوة؟" data-time="120"><div class="tags"><span class="tag st">استراتيجية: العصف الذهني</span><span class="tag ev">تقويم تكويني</span><span class="tag tm">دقيقتان • جماعي</span></div><h2>ما الذي يمكن فعله لسد الفجوة؟<small>نناقش ذلك سوياً.. كل طالبة تقترح فكرة، ثم نكشف ما ورد في الدرس</small></h2><div><button class="btn soft" data-reveal="gap-a" data-l1="اكشفي حلول الدرس">اكشفي حلول الدرس</button></div><div class="grid two" id="gap-a" hidden><div class="panel pos"><h3>تدريس المهارات الحاسوبية</h3></div><div class="panel pos"><h3>إعادة تدوير وصيانة الأجهزة المستعملة</h3></div></div></section><section class="slide" data-stage="learn" data-title="لنراجع ما تعلمناه اليوم"><div class="tags"><span class="tag st">استراتيجية: الخريطة الذهنية</span></div><h2>لنراجع ما تعلمناه اليوم</h2><div class="grid"><div class="panel"><h3>التخزين السحابي</h3><p>خدمة تتيح الاحتفاظ بنسخة احتياطية من ملفاتك على الإنترنت</p></div><div class="panel"><h3>الفجوة الرقمية</h3><p>التفاوت في المعلومات والمهارات بين من يملك إمكانية الوصول ومن لا يملكها</p></div><div class="panel"><h3>العوامل المؤثرة</h3><p>المستوى الاقتصادي • التعليم • الموقع الجغرافي • الاحتياجات الخاصة • العمر • اللغة</p></div></div></section><section class="slide" data-stage="close" data-title="لعبة جسر الفجوة" data-time="420"><div class="tags"><span class="tag st">استراتيجية: التعلم باللعب (تحدي الصف)</span><span class="tag ev">تقويم ختامي</span><span class="tag tm">7 دقائق • الصف كاملاً</span></div><h2>جسر الفجوة الرقمية<small>كل إجابة صحيحة تضيف لوحاً إلى الجسر. هل نعبر الفجوة إلى المجتمع الرقمي؟</small></h2><div class="game" data-game="bridge" data-src="q3" data-goal="10"><div class="qcard"><span class="qn"></span><span class="turn"></span><p class="qt"></p><div class="opts-g"></div><div class="feedback"></div><div><button class="btn next" hidden>التالي</button></div></div><div class="visual"></div></div></section><section class="slide" data-stage="close" data-title="أوافق أم لا أوافق؟ بعد الدرس"><div class="tags"><span class="tag st">استراتيجية: دليل الترقب (بعد الدرس)</span><span class="tag ev">تقويم ختامي</span></div><h2>هل تغيّر رأيكن بعد الدرس؟</h2><div class="scroll-x"><table class="guide" data-guide-after="ga3"></table></div></section><section class="slide" data-stage="task" data-title="المهمة الأدائية والواجب"><div class="tags"><span class="tag bk">الكتاب: تمرينات الدرس</span></div><h2>المهمة الأدائية والواجب</h2><div class="grid two"><div class="book"><span class="ico">مهمة أدائية</span><p><b>التدريب 3</b> من تمرينات الدرس في الكتاب.<br>تُنفَّذ في الصف ضمن مجموعات.</p></div><div class="book" style="background:var(--berry-soft);border-color:var(--berry)"><span class="ico" style="background:var(--berry)">الواجب</span><p><b style="color:var(--berry)">التدريب 4</b> من تمرينات الدرس في الكتاب.</p></div></div><div class="panel"><h3>من تدريبات الكتاب: الفجوة الرقمية في مجتمعك</h3><p>لقد أصبحت الفجوة الرقمية تمثل تحدياً في المجتمع الحديث. برأيك هل هناك فجوة رقمية في المجتمع الذي تعيشين فيه أو في منطقتك؟ ما أسباب وجودها؟ وكيف يمكن مواجهتها؟</p><ol class="list"><li>ما العوامل المؤثرة في الفجوة الرقمية؟</li><li>ما مدى وجود الفجوة الرقمية في مجتمعك أو منطقتك؟ اشرحي إجابتك.</li></ol><div style="margin-top:.6rem"><button class="btn soft" data-reveal="tr-a" data-l1="إجابات مقترحة للمعلمة">إجابات مقترحة للمعلمة</button></div><div class="answer" id="tr-a" hidden>1. المستوى الاقتصادي • التعليم • الموقع الجغرافي • الاحتياجات الخاصة • العمر • اللغة<br>2. شجّعي الطالبة على التعبير عن آرائها الحقيقية. ومن الحلول الممكنة: إعادة تدوير وصيانة الأجهزة المستعملة، وتدريس المهارات الحاسوبية.</div></div><p class="lead" style="margin-top:1rem">شاكرة لكن حسن استماعكن 🌷</p></section><script type="application/json" id="wh3">[
+{"q":"اذكري مجالاً أصبحت فيه الحياة أسهل بالتقنية.","a":"التسوق • التعليم عبر الإنترنت • ألعاب الفيديو"},
+{"q":"اذكري منصة تقدم دورات تدريبية عبر الإنترنت.","a":"رواق • إثرائي • دروب"},
+{"q":"لماذا يعد الاعتدال مهماً في ألعاب الفيديو؟","a":"لأنه من السهل الاندماج في لعبة معينة وإدمان العالم الرقمي"},
+{"q":"اذكري متطلباً من متطلبات التعلم مدى الحياة.","a":"التحفيز الذاتي والشعور بالرضا • القراءة والاستماع والمراقبة والممارسة والتجربة • تدوين الملاحظات • فحص معرفتك باستمرار"},
+{"q":"ماذا توفر طرق الدفع الإلكترونية؟","a":"راحة وسهولة في الدفع لجميع الأطراف"},
+{"q":"اذكري مثالاً لوسيلة دفع إلكترونية.","a":"stc pay • Bayan Pay • Ripple"}
+]<\/script><script type="application/json" id="q3">[
+{"q":"التخزين السحابي هو:","o":["خدمة تتيح الاحتفاظ بنسخة احتياطية من ملفاتك على الإنترنت","جهاز يُركّب داخل الحاسب","برنامج لتصميم المواقع"]},
+{"q":"أي مما يلي من مقدّمي خدمة التخزين السحابي؟","o":["OneDrive","stc pay","منصة رواق"]},
+{"q":"يتفحص العديد من كبار مزودي التخزين السحابي الملفات تلقائياً من أجل:","o":["اكتشاف أي محتوى غير قانوني","تحسين جودة الصور","زيادة سرعة الإنترنت"]},
+{"q":"عند استخدامك للتخزين السحابي يُنصح أن:","o":["تتجنبي تحميل أي معلومات شخصية حساسة","تحمّلي كل كلمات المرور","تحذفي النسخ الاحتياطية"]},
+{"q":"الفجوة الرقمية هي التفاوت في مقدار المعلومات والمهارات بين:","o":["من يملك إمكانية الوصول للحاسبات والإنترنت ومن ليس لديه ذلك","الطلاب والمعلمين","الحاسبات القديمة والحديثة"]},
+{"q":"تعد الفجوة الرقمية مشكلة:","o":["اجتماعية","رياضية","غذائية"]},
+{"q":"وفقاً للأبحاث، حوالي ___ من التعداد السكاني للعالم يعيشون بنوع من الإعاقة.","o":["15%","50%","1%"]},
+{"q":"من الحلول البديلة للوصول إلى الإنترنت في المناطق الريفية دون إنشاء خطوط هاتفية:","o":["الاتصالات عبر الأقمار الاصطناعية","إغلاق شبكات الاتصال","تقليل عدد الحاسبات"]},
+{"q":"أي مما يلي من العوامل المؤثرة على الفجوة الرقمية؟","o":["اللغة","لون الجهاز","حجم الشاشة"]},
+{"q":"من طرق سد الفجوة الرقمية:","o":["إعادة تدوير وصيانة الأجهزة المستعملة","منع كبار السن من استخدام التقنية","رفع تكلفة شبكات الاتصالات"]}
+]<\/script><script type="application/json" id="ga3">[
+{"k":"g1","s":"كل شخص لديه إمكانية استخدام أجهزة الحاسب والإنترنت والاستفادة من التقنية.","v":"n","why":"توجد فجوة رقمية تؤثر فيها عوامل مثل المستوى الاقتصادي والتعليم والموقع الجغرافي والاحتياجات الخاصة والعمر واللغة."},
+{"k":"g2","s":"توجد طرق لحفظ نسخة احتياطية من ملفاتي على الإنترنت.","v":"y","why":"التخزين السحابي خدمة تتيح الاحتفاظ بنسخة احتياطية من ملفاتك على الإنترنت."},
+{"k":"g3","s":"عدم مشاركة ملفاتي على الإنترنت يكفي لحماية خصوصيتي.","v":"n","why":"عند استخدام الخدمات السحابية تصبح ملفاتك الشخصية بحوزة الشركات الخاصة بالاستضافة السحابية."},
+{"k":"g4","s":"ينقسم المجتمع إلى فئتين فقط: فئة قادرة على استخدام التقنية وأخرى غير قادرة.","v":"n","why":"من الخطأ هذا التقسيم، وإنما تتفاوت فئات المجتمع في قدرتها على الاستفادة من التقنية المتاحة."},
+{"k":"g5","s":"اللغة تؤثر في كمّ وجودة المعلومات التي أصل إليها عبر الإنترنت.","v":"y","why":"اللغة تحكم كمّ وجودة المعلومات التي يمكن للمستخدم الوصول إليها والمجتمعات التي يمكنه التواصل معها."}
+]<\/script>
+</main><footer class="bar"><div class="nav"><button class="btn" data-nav="prev">→ السابق</button><button class="btn" data-nav="next">التالي ←</button></div><span class="count"></span><span class="title"></span><div class="timer" hidden><span class="t">00:00</span><button class="iconbtn">ابدئي المؤقت</button></div><button class="iconbtn" data-fs>ملء الشاشة</button></footer></div></script>
+<script>
+const v=document.querySelector('.view'),f=v.querySelector('iframe'),g=id=>document.getElementById(id).textContent.replace(/<\\\/script>/g,'</'+'script>');
+const F='<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap">';
+document.querySelectorAll('.per').forEach(b=>b.onclick=()=>{f.srcdoc='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+F+'<style>'+g('css')+'</style></head><body>'+g('t'+b.dataset.i)+'<script>'+g('js')+'</'+'script></body></html>';v.classList.add('on');setTimeout(()=>f.focus(),400)});
+v.querySelector('.back').onclick=()=>{v.classList.remove('on');f.srcdoc=''};
+</script></body></html>
