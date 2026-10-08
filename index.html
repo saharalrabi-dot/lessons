@@ -217,7 +217,9 @@ radial-gradient(circle at 4% 92%,rgba(47,128,237,.14) 0 11rem,transparent 11.1re
 radial-gradient(circle at 98% 96%,rgba(31,181,143,.14) 0 7rem,transparent 7.1rem),var(--paper)}
 .slide:nth-child(6n+1){--ac:var(--c1)} .slide:nth-child(6n+2){--ac:var(--c2)} .slide:nth-child(6n+3){--ac:var(--c5)}
 .slide:nth-child(6n+4){--ac:var(--c4)} .slide:nth-child(6n+5){--ac:var(--c6)} .slide:nth-child(6n){--ac:var(--c2)}
-.slide h2{color:var(--ac,var(--ink));padding-bottom:.25rem;background:linear-gradient(90deg,transparent,transparent) ,linear-gradient(var(--ac),var(--ac)) no-repeat right bottom/4.5rem 5px}
+.slide h2{color:var(--ac,var(--ink))}
+.slide h2::after{content:"";display:block;width:4.5rem;height:5px;border-radius:3px;background:var(--ac,var(--ink));margin-top:.35rem}
+.slide h2 small{margin-top:.5rem}
 .slide h2 small{color:var(--muted)}
 .grid>.panel:nth-child(6n+1),.tiles>.tile:nth-child(6n+1){border-top:6px solid var(--c1);background:#FFF0F6}
 .grid>.panel:nth-child(6n+2),.tiles>.tile:nth-child(6n+2){border-top:6px solid var(--c2);background:#EEF5FF}
