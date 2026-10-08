@@ -263,14 +263,24 @@ radial-gradient(circle at 98% 96%,rgba(31,181,143,.14) 0 7rem,transparent 7.1rem
 .grid .flip:nth-child(4n+1) .b{background:var(--c1)} .grid .flip:nth-child(4n+2) .b{background:var(--c2)} .grid .flip:nth-child(4n+3) .b{background:var(--c4)} .grid .flip:nth-child(4n) .b{background:var(--c5)}
 .qcard{border-color:var(--ac,var(--ink));box-shadow:0 8px 0 var(--ac,var(--ink))}
 .btn{background:var(--ac,var(--ink))}
-.bar .btn{background:var(--ink)}</script>
+.bar .btn{background:var(--ink)}
+.stages span{cursor:pointer;font-weight:600}
+.stages span:hover{filter:brightness(.95);border-color:var(--c2)}
+.stages span:focus-visible{outline:3px solid var(--c2);outline-offset:2px}
+.jump{font:inherit;font-size:.72em;max-width:min(100%,18rem);padding:.2rem .5rem;border-radius:9px;border:2px solid var(--c5);background:#F3EEFF;color:var(--ink);cursor:pointer}</script>
 <script type="text/plain" id="js">(function(){
 const STAGES={review:"مراجعة الدرس السابق",warm:"نشاط تمهيدي",goals:"العنوان والأهداف",learn:"الشرح",close:"النشاط الختامي",task:"المهام والواجب"};
 const order=["review","warm","goals","learn","close","task"];
 const slides=[...document.querySelectorAll('.slide')];
 const stagesEl=document.querySelector('.stages');
 const present=order.filter(s=>slides.some(x=>x.dataset.stage===s));
-stagesEl.innerHTML=present.map(s=>`<span data-s="${s}">${STAGES[s]}</span>`).join('');
+stagesEl.innerHTML=present.map(s=>`<span role="button" tabindex="0" data-s="${s}" title="انتقلي إلى ${STAGES[s]}">${STAGES[s]}</span>`).join('');
+const jump=document.createElement('select');jump.className='jump';jump.setAttribute('aria-label','انتقلي إلى صفحة');
+jump.innerHTML=slides.map((x,i)=>`<option value="${i}">${i+1}. ${(x.dataset.title||'').replace(/</g,'&lt;')}</option>`).join('');
+stagesEl.after(jump);
+stagesEl.addEventListener('click',e=>{const b=e.target.closest('[data-s]');if(!b)return;go(slides.findIndex(x=>x.dataset.stage===b.dataset.s))});
+stagesEl.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.dataset.s){e.preventDefault();e.target.click()}});
+jump.addEventListener('change',()=>{go(+jump.value);jump.blur()});
 const prog=document.querySelector('.prog i'),count=document.querySelector('.count'),ttl=document.querySelector('.bar .title');
 let cur=0;
 const timerEl=document.querySelector('.timer'),tT=timerEl.querySelector('.t'),tBtn=timerEl.querySelector('button');
@@ -287,12 +297,13 @@ stagesEl.querySelectorAll('span').forEach((e,k)=>{e.classList.toggle('on',k===si
 prog.style.width=((cur+1)/slides.length*100)+'%';
 count.textContent=(cur+1)+' / '+slides.length;
 ttl.textContent=slides[cur].dataset.title||'';
+const j=document.querySelector('.jump');if(j)j.value=cur;
 slides[cur].scrollTop=0;resetTimer();
 slides[cur].dispatchEvent(new Event('show'));
 }
 document.querySelector('[data-nav=next]').onclick=()=>go(cur+1);
 document.querySelector('[data-nav=prev]').onclick=()=>go(cur-1);
-document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea'))return;
+document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,select'))return;
 if(e.key==='ArrowLeft'||e.key==='PageDown'){go(cur+1);e.preventDefault()}
 if(e.key==='ArrowRight'||e.key==='PageUp'){go(cur-1);e.preventDefault()}});
 const fs=document.querySelector('[data-fs]');
