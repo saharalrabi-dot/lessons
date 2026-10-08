@@ -13,14 +13,20 @@ h1{font-size:clamp(1.8rem,5vw,2.8rem)} h2{color:var(--berry);font-size:1.3rem}
 .pers{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}
 .per{font:inherit;text-align:start;cursor:pointer;display:flex;flex-direction:column;gap:.15rem;background:var(--berry-soft);border:2px solid transparent;border-radius:12px;padding:.7rem .9rem;color:var(--ink)}
 .per:hover,.per:focus-visible{border-color:var(--berry);outline:none}
-.per b{font-family:"El Messiri",serif;font-size:1.1rem;color:var(--berry)} .per span{font-size:.85rem;color:var(--muted)}
+.per b{font-family:"El Messiri",serif;font-size:1.1rem;color:var(--berry)}
+.per:nth-child(1){background:#FFE3EF} .per:nth-child(1) b{color:#E5337A} .per:nth-child(2){background:#E1EDFF} .per:nth-child(2) b{color:#2F80ED} .per:nth-child(3){background:#DDF7EF} .per:nth-child(3) b{color:#1FB58F}
+.per:nth-child(1):hover{border-color:#E5337A} .per:nth-child(2):hover{border-color:#2F80ED} .per:nth-child(3):hover{border-color:#1FB58F}
+h1{background:linear-gradient(90deg,#E5337A,#8E5CF7,#2F80ED);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lesson{border-top:6px solid #F7B32B}
+body{background:radial-gradient(circle at 95% 5%,rgba(247,179,43,.2) 0 8rem,transparent 8.1rem),radial-gradient(circle at 5% 95%,rgba(47,128,237,.15) 0 10rem,transparent 10.1rem),#FFF8FB}
+.hero{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap} .hero svg{width:min(14rem,60vw);height:auto} .per span{font-size:.85rem;color:var(--muted)}
 .view{position:fixed;inset:0;display:none;flex-direction:column;background:var(--paper)}
 .view.on{display:flex}
 .back{font:inherit;cursor:pointer;border:0;background:var(--ink);color:#fff;padding:.35rem 1rem;border-radius:0 0 0 12px;align-self:flex-start;font-size:.85rem}
 iframe{flex:1;border:0;width:100%}
 </style></head><body>
 <div class="home">
-<header><h1>دروسي في التقنية الرقمية</h1><p class="sub">تقنية رقمية 1-1 • يعمل في أي متصفح، بلا تسجيل دخول وبلا صوت</p></header>
+<header class="hero"><div><h1>دروسي في التقنية الرقمية</h1><p class="sub">تقنية رقمية 1-1 • الصف الأول الثانوي • يعمل في أي متصفح، بلا تسجيل دخول وبلا صوت</p></div><svg viewBox="0 0 240 180" role="img" aria-label="عوامل الفجوة الرقمية حول العالم" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="90" r="64" fill="#2F80ED"/><path d="M80 50 q20 10 18 30 q-2 18 -22 22 q-10 -20 4 -52z M130 40 q30 10 40 40 q-20 0 -30 -12 q-10 -14 -10 -28z M120 120 q20 -6 34 8 q-10 18 -30 22 q-10 -14 -4 -30z" fill="#1FB58F"/><ellipse cx="120" cy="90" rx="64" ry="22" fill="none" stroke="#FFFFFF" stroke-width="2" opacity=".7"/><path d="M120 26 v128" stroke="#FFFFFF" stroke-width="2" opacity=".7"/><rect x="10" y="20" width="44" height="30" rx="8" fill="#E5337A"/><text x="32" y="42" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial" font-weight="700">ع</text><rect x="186" y="20" width="44" height="30" rx="8" fill="#F7B32B"/><text x="208" y="42" font-size="18" text-anchor="middle" fill="#1E2142" font-family="Arial" font-weight="700">E</text><circle cx="30" cy="150" r="16" fill="#FF7A45"/><text x="30" y="157" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial" font-weight="700">$</text><circle cx="210" cy="150" r="16" fill="#8E5CF7"/><path d="M203 150 h14 M210 143 v14" stroke="#FFFFFF" stroke-width="4"/></svg></header>
 <h2>الوحدة الأولى: أساسيات علم الحاسب</h2>
 <article class="lesson"><h3>الدرس الخامس: تقنية المعلومات والاتصالات والمجتمع</h3><span class="meta">الكتاب ص59–67 • ثلاث حصص</span>
 <div class="pers"><button class="per" data-i="0"><b>الحصة الأولى</b><span>تأثير التقنية على قطاع الأعمال • لعبة سُلّم الوظائف</span></button><button class="per" data-i="1"><b>الحصة الثانية</b><span>الحياة أسهل • التعلم مدى الحياة • الدفع • المحفظة الرقمية</span></button><button class="per" data-i="2"><b>الحصة الثالثة</b><span>التخزين السحابي • الفجوة الرقمية • جسر الفجوة</span></button></div></article>
