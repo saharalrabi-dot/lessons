@@ -30,7 +30,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .poster a{display:block;width:min(100%,26rem);border:var(--bd);border-radius:12px;overflow:hidden;box-shadow:-6px 6px 0 var(--tc);background:#fff}
 .poster img{display:block;width:100%;height:auto}
 .poster figcaption{font-size:.8rem;color:var(--muted);font-weight:600;text-align:center}
-.hero h1 em{font-style:normal;color:var(--ink);background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+.hero h1 em{font-style:normal}
 .tagbox{display:inline-block;align-self:flex-start;background:var(--yellow);border:2px solid var(--ink);border-radius:8px;padding:.05rem .8rem;font-weight:700;font-size:.9rem}
 
 /* subject switch */
@@ -42,8 +42,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .subj.on{background:var(--yellow);transform:translate(-2px,2px);box-shadow:-4px 4px 0 var(--sc)}
 .subj.on .ic{background:#fff}
 /* tabs */
-.tabs{display:flex;gap:.6rem;flex-wrap:wrap}
-.tab{border:var(--bd);background:#fff;border-radius:99px;padding:.3rem 1.1rem;font-weight:800;box-shadow:-3px 3px 0 var(--ink)}
+.tabs{display:flex;gap:.35rem;align-items:flex-end;border-bottom:3px solid var(--ink);padding-inline:.7rem}
+.tab{border:var(--bd);border-bottom:0;background:#fff;border-radius:10px 10px 0 0;padding:.3rem 1.2rem;font-weight:800;margin-bottom:-3px;position:relative}
+.tab::before{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:var(--ink)}
+.tab.on{padding-top:.55rem}
+.tab.on::before{background:var(--sc)}
 .tab.on{background:var(--sc);color:#fff}
 .tab .n{display:inline-grid;place-items:center;min-width:1.6em;height:1.6em;border-radius:99px;background:var(--yellow);color:var(--ink);border:2px solid var(--ink);font-size:.75em;margin-inline-start:.4rem}
 .panel{display:flex;flex-direction:column;gap:1.1rem}
@@ -131,7 +134,7 @@ iframe{flex:1;border:0;width:100%}
  .lessons{padding:.8rem .6rem .9rem}
 }
 </style></head><body>
-<header class="top"><div class="topwin"><div class="win"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="wt">التقنية الرقمية</span></div><div class="hero">
+<header class="top"><div class="topwin"><div class="win"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="wt"></span></div><div class="hero">
 <span class="burst" aria-hidden="true">💻</span><div class="ht"><h1>دروس <em>التقنية الرقمية</em></h1><span class="tagbox">أ. سحر الربعي</span></div></div></div></header>
 <div class="home">
 <nav class="subjects" aria-label="المواد"><button class="subj" data-subj="t11" data-c="#E9476A" data-s2="#FDE3E9" style="--sc:#E9476A;--ss:#FDE3E9"><span class="ic">💻</span><span><b>تقنية رقمية 1-1</b><small>الصف الأول الثانوي</small></span></button><button class="subj" data-subj="t3" data-c="#1B7FA6" data-s2="#DDF1F8" style="--sc:#1B7FA6;--ss:#DDF1F8"><span class="ic">📱</span><span><b>تقنية رقمية 3</b><small>الصف الثالث الثانوي</small></span></button></nav>
