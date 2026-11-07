@@ -1438,12 +1438,12 @@ linear-gradient(180deg,#FBF7EF,#F6EFE1)}
 .cheer-ov[hidden]{display:none}
 .cheer-ov .cbox{display:flex;flex-direction:column;align-items:center;gap:.4rem;transform:scale(.4);opacity:0;transition:transform .45s cubic-bezier(.2,1.6,.4,1),opacity .3s}
 .cheer-ov.on .cbox{transform:scale(1);opacity:1}
-.cheer-ov svg{width:min(42vw,15rem);height:auto;overflow:visible}
-.cheer-ov .hd{transform-box:fill-box;transform-origin:50% 100%;animation:clap .32s ease-in-out infinite alternate}
-.cheer-ov .hd.l{transform:rotate(-14deg)}
-@keyframes clap{from{transform:rotate(-16deg) translateX(-6px)}to{transform:rotate(4deg) translateX(10px)}}
-.cheer-ov .spark{animation:spark .32s ease-in-out infinite alternate;transform-origin:100px 40px}
-@keyframes spark{from{opacity:.35;transform:scale(.85)}to{opacity:1;transform:scale(1.08)}}
+.cheer-ov svg{width:min(60vw,18rem);height:auto;overflow:visible}
+.cheer-ov .hd{transform-box:fill-box;transform-origin:50% 100%;animation:clap .3s cubic-bezier(.5,0,1,1) infinite alternate}
+
+@keyframes clap{from{transform:translateX(-16px) rotate(-26deg)}to{transform:translateX(0) rotate(9deg)}}
+.cheer-ov .spark{animation:spark .3s cubic-bezier(.5,0,1,1) infinite alternate;transform-origin:120px 30px}
+@keyframes spark{0%,70%{opacity:0;transform:scale(.6)}100%{opacity:1;transform:scale(1.1)}}
 .cheer-ov .cw{font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif;font-weight:700;font-size:clamp(2.2rem,7vw,4.6rem);color:#fff;background:#EF476F;border:5px solid #1D1D35;border-radius:18px;padding:.15em .7em;box-shadow:-8px 8px 0 #FFC93C;text-align:center;line-height:1.3}
 .cheer-ov .cf{position:absolute;inset:0;pointer-events:none}
 .cheer-ov .cf i{position:absolute;top:-6%;display:block;animation-name:fall;animation-timing-function:linear;animation-fill-mode:both}
@@ -1751,9 +1751,9 @@ const s=document.createElement('span');s.className='today';s.innerHTML=`<b>${day
 /* ===== celebration button ===== */
 (()=>{const bar=document.querySelector('.bar');if(!bar||bar.querySelector('.cheer'))return;
 const W=['ممتازة!','رائعة!','أحسنتِ، بارك الله فيكِ!'];let last=-1;
-const hand=(flip)=>`<g transform="${flip?'translate(200 0) scale(-1 1)':''}"><g class="hd ${flip?'r':'l'}"><path d="M62 150 C40 128 34 98 44 80 L52 46 C54 38 66 39 66 48 L64 78 L70 34 C72 25 85 26 84 36 L80 76 L88 30 C90 21 103 23 102 33 L96 78 L104 44 C106 36 118 38 117 47 L110 96 C108 120 100 140 86 152 Z" fill="#FFD9B0" stroke="#1D1D35" stroke-width="5" stroke-linejoin="round"/><path d="M44 80 C34 74 24 78 26 90 L40 118" fill="#FFD9B0" stroke="#1D1D35" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 150 L92 156 L90 172 L56 166 Z" fill="#118AB2" stroke="#1D1D35" stroke-width="5" stroke-linejoin="round"/></g></g>`;
-const svg=`<svg viewBox="0 0 200 190" aria-hidden="true"><g class="spark"><path d="M100 8 v18 M60 20 l8 14 M140 20 l-8 14 M30 52 l14 8 M170 52 l-14 8" stroke="#FFC93C" stroke-width="7" stroke-linecap="round"/></g>${hand(false)}${hand(true)}</svg>`;
-const ov=document.createElement('div');ov.className='cheer-ov';ov.hidden=true;ov.innerHTML=`<div class="cf"></div><div class="cbox">${svg}<div class="cw"></div></div>`;document.body.appendChild(ov);
+const hand=(flip)=>`<g transform="${flip?'translate(240 0) scale(-1 1)':''}"><g transform="translate(-12 14)"><g class="hd"><path d="M62 150 C40 128 34 98 44 80 L52 46 C54 38 66 39 66 48 L64 78 L70 34 C72 25 85 26 84 36 L80 76 L88 30 C90 21 103 23 102 33 L96 78 L104 44 C106 36 118 38 117 47 L110 96 C108 120 100 140 86 152 Z" fill="#FFD9B0" stroke="#1D1D35" stroke-width="5" stroke-linejoin="round"/><path d="M44 80 C34 74 24 78 26 90 L40 118" fill="#FFD9B0" stroke="#1D1D35" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 150 L92 156 L90 172 L56 166 Z" fill="#118AB2" stroke="#1D1D35" stroke-width="5" stroke-linejoin="round"/></g></g></g>`;
+ const svg=`<svg viewBox="0 0 240 200" aria-hidden="true"><g class="spark"><path d="M120 4 v22 M92 14 l9 15 M148 14 l-9 15 M74 36 l14 7 M166 36 l-14 7" stroke="#FFC93C" stroke-width="7" stroke-linecap="round"/></g>${hand(false)}${hand(true)}</svg>`;
+ const ov=document.createElement('div');ov.className='cheer-ov';ov.hidden=true;ov.innerHTML=`<div class="cf"></div><div class="cbox">${svg}<div class="cw"></div></div>`;document.body.appendChild(ov);
 const b=document.createElement('button');b.className='iconbtn cheer';b.textContent='تشجيع';const fs=bar.querySelector('[data-fs]');fs?bar.insertBefore(b,fs):bar.appendChild(b);
 let t;const close=()=>{ov.hidden=true;ov.classList.remove('on')};
 b.onclick=()=>{let k;do{k=Math.floor(Math.random()*W.length)}while(k===last&&W.length>1);last=k;ov.querySelector('.cw').textContent=W[k];
