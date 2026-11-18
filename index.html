@@ -3266,13 +3266,15 @@ document.addEventListener('click',e=>{const r=e.target.closest('[data-reveal]');
 <h2>الخطوة 4: فتح شاشة الموقف بالجملة الشرطية</h2>
 <div class="split"><div class="txt">
 <ol class="list big">
-<li>أنشئي متغيرًا عامًا باسم <b dir="ltr">selection</b>، ثم في <b dir="ltr">when Situations.AfterPicking</b> احفظي الاختيار: <b dir="ltr">set global selection to Situations.Selection</b>.</li>
+<li>من <b dir="ltr">Variables</b> اسحبي <b dir="ltr">initialize global name to</b> وسمّيه <b dir="ltr">selection</b>، ومن <b dir="ltr">Text</b> ألصقي به لبنة <b dir="ltr">" "</b> فارغة.</li>
+<li>من أداة <b dir="ltr">Situations</b> اسحبي <b dir="ltr">when Situations.AfterPicking</b>، وضعي داخلها <b dir="ltr">set global selection to</b> (من Variables) مع <b dir="ltr">Situations.Selection</b> (لبنة خضراء فاتحة من أداة Situations).</li>
 <li>من <b dir="ltr">Control</b> أضيفي <b dir="ltr">if then</b> وأضيفي بالترس <b dir="ltr">else if</b> لكل موقف.</li>
 <li>قارني <b dir="ltr">get global selection</b> باسم الموقف من <b dir="ltr">Logic</b> (=).</li>
 <li>في كل فرع استخدمي <b dir="ltr">open another screen screenName</b> واكتبي اسم الشاشة المطابقة.</li>
 </ol>
-</div><div class="art"><div class="blocks">
-<span class="blk2 e">when Situations.AfterPicking do</span>
+</div><div class="art"><div class="blocks" style="font-size:.88em">
+<span class="blk2 v">initialize global selection to <span class="in">" "</span></span>
+<span class="blk2 e" style="margin-top:.6rem">when Situations.AfterPicking do</span>
 <span class="blk2 v ind1">set global selection to <span class="in">Situations.Selection</span></span>
 <span class="blk2 c ind1">if <span class="in">get global selection = "<bdi>رسالة تطلب كلمة المرور</bdi>"</span></span>
 <span class="blk2 c ind2">open another screen screenName <span class="in">"Situation1"</span></span>
@@ -3289,7 +3291,7 @@ document.addEventListener('click',e=>{const r=e.target.closest('[data-reveal]');
 <label><input type="checkbox" id="t27-1"> صمّمي الشاشة الرئيسة: تسمية، وصورة، و<b dir="ltr">ListPicker</b> باسم <b dir="ltr">Situations</b>.</label>
 <label><input type="checkbox" id="t27-2"> أنشئي الشاشات الأربع، وفي كل شاشة ثلاث تسميات وصورة.</label>
 <label><input type="checkbox" id="t27-3"> أنشئي المتغير العام <b dir="ltr">Situations</b> بقائمة من أربعة مواقف، واعرضيها في <b dir="ltr">BeforePicking</b>.</label>
-<label><input type="checkbox" id="t27-4"> برمجي <b dir="ltr">AfterPicking</b> بالجملة الشرطية لفتح الشاشة المطابقة.</label>
+<label><input type="checkbox" id="t27-4"> أنشئي المتغير العام <b dir="ltr">selection</b>، ثم برمجي <b dir="ltr">AfterPicking</b> بالجملة الشرطية لفتح الشاشة المطابقة.</label>
 <label><input type="checkbox" id="t27-5"> اختبري التطبيق، ثم أنشئي ملف <b dir="ltr">.apk</b> من <b dir="ltr">Build</b>.</label>
 </div>
 </section>
